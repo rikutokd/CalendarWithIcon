@@ -4,10 +4,19 @@ import UIKit
                           "Train",
                           "Hotel",]
 
-class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        
+        let height: CGFloat = 128
+        let width: CGFloat = 128
+        
+        return CGSize(width: width, height: height)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
