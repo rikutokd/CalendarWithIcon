@@ -5,7 +5,7 @@ import CalculateCalendarLogic
 class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
 
     @IBOutlet weak var calendar: FSCalendar!
-
+    @IBOutlet weak var button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,11 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         calendar.calendarWeekdayView.weekdayLabels[5].text = "金"
         calendar.calendarWeekdayView.weekdayLabels[6].text = "土"
 
+    }
+    
+    @IBAction func buttonTapped(sender : AnyObject) {
+        performSegue(withIdentifier: "2imageview",sender: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
