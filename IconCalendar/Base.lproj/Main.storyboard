@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yU-xz-Igu" customClass="FSCalendar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yU-xz-Igu" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="20" width="375" height="371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="YYYY年MM月"/>
@@ -28,9 +27,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qce-AN-lnh"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJi-3T-L4t">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJi-3T-L4t">
                                 <rect key="frame" x="212" y="447" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="xcL-FG-lYe" kind="presentation" identifier="2imageview" id="mgZ-Fy-t18"/>
@@ -38,6 +36,13 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8yU-xz-Igu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1xz-3S-XFE"/>
+                            <constraint firstItem="8yU-xz-Igu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="OSZ-z1-dW0"/>
+                            <constraint firstItem="XJi-3T-L4t" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="56" id="P5e-JO-5pq"/>
+                            <constraint firstAttribute="bottom" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="276" id="RoM-fW-ljn"/>
+                            <constraint firstItem="8yU-xz-Igu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xkn-ak-zHY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
