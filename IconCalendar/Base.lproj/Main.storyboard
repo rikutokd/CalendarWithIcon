@@ -108,7 +108,11 @@
                     <navigationItem key="navigationItem" id="bay-od-NQ6">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="save" id="t6u-e9-REr"/>
-                            <barButtonItem image="text.badge.plus" catalog="system" style="plain" id="9U5-5S-PNg"/>
+                            <barButtonItem image="text.badge.plus" catalog="system" style="plain" id="9U5-5S-PNg">
+                                <connections>
+                                    <segue destination="gte-es-bgk" kind="presentation" identifier="2TextView" id="WNs-Ga-Nf0"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
@@ -116,12 +120,12 @@
             </objects>
             <point key="canvasLocation" x="1919.2" y="112.89355322338831"/>
         </scene>
-        <!--View Controller-->
+        <!--Text View Controller-->
         <scene sceneID="gno-TO-Ws0">
             <objects>
-                <viewController id="gte-es-bgk" sceneMemberID="viewController">
+                <viewController id="gte-es-bgk" customClass="TextViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ua6-5n-qP8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Jnq-h6-5g7"/>
