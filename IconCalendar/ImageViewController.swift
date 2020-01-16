@@ -10,6 +10,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
     }
     
+    //cellの横幅、高さ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
         let height: CGFloat = 128
