@@ -34,6 +34,11 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let photoImage = UIImage(named: photos[indexPath.row])
                photoImageView.image = photoImage
         
+        //選択されてハイライトされる
+        let selectedImageView = UIView(frame: cell.frame)
+        selectedImageView.backgroundColor = .lightGray
+        cell.selectedBackgroundView = selectedImageView
+        
         return cell
     }
     
@@ -50,4 +55,3 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
             }
     
     }
-
