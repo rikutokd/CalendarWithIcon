@@ -106,34 +106,21 @@
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
                     <navigationItem key="navigationItem" id="bay-od-NQ6">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="t6u-e9-REr"/>
-                            <barButtonItem image="text.badge.plus" catalog="system" style="plain" id="9U5-5S-PNg">
-                                <connections>
-                                    <segue destination="gte-es-bgk" kind="presentation" identifier="2TextView" id="WNs-Ga-Nf0"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ju0-ph-8YP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f9I-af-Xn0" customClass="myRightButton">
+                                <rect key="frame" x="284" y="11" width="75" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="text.badge.plus" catalog="system"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myRightButton" destination="f9I-af-Xn0" id="18R-6P-FMp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1919.2" y="112.89355322338831"/>
-        </scene>
-        <!--Text View Controller-->
-        <scene sceneID="gno-TO-Ws0">
-            <objects>
-                <viewController id="gte-es-bgk" customClass="TextViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ua6-5n-qP8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Jnq-h6-5g7"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a9M-wX-cfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2738" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zNu-pd-IOJ">
