@@ -105,18 +105,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bay-od-NQ6">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ju0-ph-8YP">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f9I-af-Xn0" customClass="myRightButton">
-                                <rect key="frame" x="284" y="11" width="75" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="text.badge.plus" catalog="system"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="myRightButton" destination="f9I-af-Xn0" id="18R-6P-FMp"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="bay-od-NQ6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +130,4 @@
             <point key="canvasLocation" x="138.40000000000001" y="112.89355322338831"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="text.badge.plus" catalog="system" width="64" height="54"/>
-    </resources>
 </document>
