@@ -105,7 +105,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bay-od-NQ6"/>
+                    <navigationItem key="navigationItem" id="bay-od-NQ6">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="rxZ-my-fQK">
+                            <connections>
+                                <action selector="save:" destination="xcL-FG-lYe" id="xdW-RX-RTk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="save" destination="rxZ-my-fQK" id="E5W-nK-zZg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,6 +6,12 @@ import UIKit
 
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    @IBOutlet weak var save: UIBarButtonItem!
+    
+    @IBAction func save(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     //cellの横幅、高さ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
