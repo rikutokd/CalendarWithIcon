@@ -61,11 +61,11 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var selectedImage : UIImage?
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nextViewController = segue.destination as? ViewController{
-            nextViewController.eventImage = selectedImage
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let nextViewController = segue.destination as? ViewController{
+//            nextViewController.eventImage = selectedImage
+//        }
+//    }
     
     
     }

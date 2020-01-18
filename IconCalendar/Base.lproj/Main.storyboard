@@ -27,13 +27,36 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qce-AN-lnh"/>
                                 </connections>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mei-yx-kpI">
+                                <rect key="frame" x="0.0" y="431" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="BxO-vK-q0E"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-8e-u8T">
+                                <rect key="frame" x="124" y="431" width="128" height="128"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0an-Z2-ILO">
+                                <rect key="frame" x="247" y="431" width="128" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1xz-3S-XFE"/>
+                            <constraint firstItem="mei-yx-kpI" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="8" id="4Q0-Sl-LTO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mei-yx-kpI" secondAttribute="bottom" constant="108" id="ETu-bL-bhg"/>
+                            <constraint firstItem="0an-Z2-ILO" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="8" id="FTp-i7-MR3"/>
+                            <constraint firstItem="2Ev-8e-u8T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="Flo-zn-gFB"/>
+                            <constraint firstItem="2Ev-8e-u8T" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="8" id="KHA-R7-8gF"/>
+                            <constraint firstItem="mei-yx-kpI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LQd-UL-40X"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OSZ-z1-dW0"/>
+                            <constraint firstItem="0an-Z2-ILO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QF7-Qz-62Z"/>
                             <constraint firstAttribute="bottom" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="244" id="RoM-fW-ljn"/>
+                            <constraint firstItem="0an-Z2-ILO" firstAttribute="leading" secondItem="mei-yx-kpI" secondAttribute="trailing" constant="119" id="Svc-WY-anP"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xkn-ak-zHY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0an-Z2-ILO" secondAttribute="bottom" constant="108" id="hbu-oM-NOF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Ev-8e-u8T" secondAttribute="trailing" constant="123" id="j1t-x0-TNW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2Ev-8e-u8T" secondAttribute="bottom" constant="108" id="zlm-kc-3KR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
