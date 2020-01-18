@@ -37,6 +37,8 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let photoImage = UIImage(named: photos[indexPath.row])
                photoImageView.image = photoImage
         
+        selectedImage = photoImage
+        
         //選択されてハイライトされる
         let selectedImageView = UIView(frame: cell.frame)
         selectedImageView.backgroundColor = .lightGray
@@ -56,5 +58,14 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
             return UIEdgeInsets.zero
             }
+    
+    var selectedImage : UIImage?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextViewController = segue.destination as? ViewController{
+            nextViewController.eventImage = selectedImage
+        }
+    }
+    
     
     }
