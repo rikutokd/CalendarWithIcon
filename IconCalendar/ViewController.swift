@@ -4,8 +4,11 @@ import CalculateCalendarLogic
 
 class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
 
+    var selectedDate : String?
+    
     @IBOutlet weak var calendar: FSCalendar!
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // デリゲートの設定
@@ -19,9 +22,10 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         calendar.calendarWeekdayView.weekdayLabels[4].text = "木"
         calendar.calendarWeekdayView.weekdayLabels[5].text = "金"
         calendar.calendarWeekdayView.weekdayLabels[6].text = "土"
+        
 
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,4 +87,26 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         return nil
     }
 
+}
+
+extension ViewController {
+    func segueToImageViewController(){
+        self.performSegue(withIdentifier: "toImageView", sender: Date.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "toImageView"{
+            
+            let dateFormater = DateFormatter()
+            dateFormater.locale = Locale(identifier: "ja_JP")
+            dateFormater.dateFormat = "yyyy/MM/dd HH:mm:ss"
+            let date = dateFormater.string(from: Date())
+            
+            let nextVC = segue.destination as! ImageViewController
+            
+            selectedDate = date
+            nextVC.tappedDate = selectedDate!
+        }
+    }
+    
 }

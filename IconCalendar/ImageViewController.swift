@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
     private let photos = ["Airplane",
                           "Train",
@@ -6,11 +7,29 @@ import UIKit
 
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    var tappedDate: String?
+    var selectedImage : UIImage?
+    
     @IBOutlet weak var save: UIBarButtonItem!
     
-    @IBAction func save(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func save(_ sender: Any) {
+//
+//        print("DBへの登録開始")
+//
+//        let realm = try! Realm()
+//
+//        try! realm.write{
+//            //日付とカレンダーの画像を型変換して保存
+//            let Events = [EventModel(value: ["date":tappedDate, "icon": iconImage])]
+//            realm.add(Events)
+//            print("DBへ書き込み中")
+//        }
+//
+//        print("DBへ書き込み完了")
+//
+//        self.navigationController?.popViewController(animated: true)
+//
+//    }
     
     //cellの横幅、高さ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
@@ -36,9 +55,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let photoImageView = cell.contentView.viewWithTag(1)  as! UIImageView
                 let photoImage = UIImage(named: photos[indexPath.row])
                photoImageView.image = photoImage
-        
-        selectedImage = photoImage
-        
+                        
         //選択されてハイライトされる
         let selectedImageView = UIView(frame: cell.frame)
         selectedImageView.backgroundColor = .lightGray
@@ -59,13 +76,14 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
             return UIEdgeInsets.zero
             }
     
-    var selectedImage : UIImage?
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let nextViewController = segue.destination as? ViewController{
-//            nextViewController.eventImage = selectedImage
-//        }
-//    }
-    
-    
     }
+
+extension ImageViewController {
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+            
+        // [indexPath.row] から画像名を探し、UImage を設定
+        selectedImage = UIImage(named: photos[indexPath.row])
+        
+        print(selectedImage)
+    }
+}

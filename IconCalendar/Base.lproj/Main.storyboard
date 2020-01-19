@@ -63,7 +63,7 @@
                     <navigationItem key="navigationItem" id="ht2-Z6-3ki">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l78-fx-m00">
                             <connections>
-                                <segue destination="xcL-FG-lYe" kind="show" id="7YQ-3A-B4y"/>
+                                <segue destination="xcL-FG-lYe" kind="show" identifier="toImageView" id="7YQ-3A-B4y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
