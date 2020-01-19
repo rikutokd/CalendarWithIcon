@@ -85,5 +85,6 @@ extension ImageViewController {
         selectedImage = UIImage(named: photos[indexPath.row])
         
         print(selectedImage)
+        print(tappedDate)
     }
 }
