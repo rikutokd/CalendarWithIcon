@@ -36,6 +36,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         saveBtn?.backgroundColor = .systemBlue
         saveBtn!.layer.cornerRadius = 35
         
+        saveBtn!.addTarget(self, action: #selector(saveEvent(_:)),for: .touchUpInside)
         
     }
     
@@ -94,8 +95,10 @@ extension ImageViewController {
         
         let pngImage = selectedImage?.pngData()
         
-        
-        
-        
     }
+    
+    @objc func saveEvent(_ : UIButton) {
+        print("データ書き込み開始")
+    }
+    
 }

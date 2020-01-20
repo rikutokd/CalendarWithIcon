@@ -10,6 +10,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var calendar: FSCalendar!
     
+    @IBOutlet weak var addButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // デリゲートの設定
@@ -26,6 +28,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
         self.overrideUserInterfaceStyle = .light
 
+        addButton.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,10 +97,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
 extension ViewController {
     
-    @IBAction func saveButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "toImageView", sender: self)
-    }
-    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         
         let f = DateFormatter()
@@ -107,21 +107,12 @@ extension ViewController {
         let strDate = f.string(from: date)
 
         print(strDate)
-        
-                       print("日付の登録を開始")
-                       
-                       let realm = try! Realm()
-                       
-                               try! realm.write{
-                                   //日付保存
-                                   let Events = [EventModel(value: ["date":strDate])]
-                                   realm.add(Events)
-                                   print("DBへ書き込み中")
-                               }
-                       
-                       print("日付の登録完了")
                 
-                   }
+    }
+    
+    @objc func addEvents(_: UIButton){
+        let NextViewController = self.storyboard?.instantiateViewController(withIdentifier: "NextViewController") as! ImageViewController
+    }
             
-        }
+}
 

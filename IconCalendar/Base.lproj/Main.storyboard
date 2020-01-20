@@ -50,6 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="JnR-GH-NDT" id="JYi-Dj-wM5"/>
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
                     </connections>
                 </viewController>
@@ -60,7 +61,7 @@
         <!--Image View Controller-->
         <scene sceneID="3aB-rw-EIU">
             <objects>
-                <viewController id="xcL-FG-lYe" customClass="ImageViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NextViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xcL-FG-lYe" customClass="ImageViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Na5-hJ-sIZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,6 +111,9 @@
                                     <constraint firstAttribute="width" constant="70" id="iYs-gi-n5N"/>
                                 </constraints>
                                 <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="xcL-FG-lYe" eventType="touchUpInside" id="t0M-8T-VLP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -128,7 +132,7 @@
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
                     <connections>
-                        <outlet property="saveButton" destination="qRb-Uj-d5e" id="DLO-Q9-r0p"/>
+                        <outlet property="saveButton" destination="qRb-Uj-d5e" id="xBL-dP-dtq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
