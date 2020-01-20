@@ -23,6 +23,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         calendar.calendarWeekdayView.weekdayLabels[5].text = "金"
         calendar.calendarWeekdayView.weekdayLabels[6].text = "土"
         
+        self.overrideUserInterfaceStyle = .light
 
     }
     
@@ -92,7 +93,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 extension ViewController {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
         
         let f = DateFormatter()
         f.dateStyle = .long
@@ -100,30 +100,17 @@ extension ViewController {
         f.locale = Locale(identifier: "ja_JP")
 
         print(f.string(from: date))
-
-
         
+        func segueToImageViewController(){
+            self.performSegue(withIdentifier: "toImageView", sender: f.string(from: date))
+        }
+
     }
     
-    
-    
-    func segueToImageViewController(){
-        self.performSegue(withIdentifier: "toImageView", sender: Date.self)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+            let nextVC = segue.destination as! ImageViewController
+
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if  segue.identifier == "toImageView"{
-//
-//            let dateFormater = DateFormatter()
-//            dateFormater.locale = Locale(identifier: "ja_JP")
-//            dateFormater.dateFormat = "yyyy/MM/dd"
-//            let date = dateFormater.string(from: Date())
-//
-//            let nextVC = segue.destination as! ImageViewController
-//
-//            selectedDate = date
-//            nextVC.tappedDate = selectedDate!
-//        }
-//    }
     
 }
