@@ -100,24 +100,43 @@
                                     <outlet property="delegate" destination="xcL-FG-lYe" id="6Tb-SI-2JP"/>
                                 </connections>
                             </collectionView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-pb-wXj">
-                                <rect key="frame" x="0.0" y="417" width="375" height="230"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-pb-wXj">
+                                <rect key="frame" x="0.0" y="431" width="375" height="216"/>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRb-Uj-d5e">
+                                <rect key="frame" x="266" y="353" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1WE-bc-sDI"/>
+                                    <constraint firstAttribute="width" constant="70" id="iYs-gi-n5N"/>
+                                </constraints>
+                                <state key="normal" image="plus" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="centerX" secondItem="Na5-hJ-sIZ" secondAttribute="centerX" id="EEE-iQ-Tf8"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="leading" secondItem="Jc4-Uv-QTL" secondAttribute="leading" id="Hje-8z-PFW"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="bottom" secondItem="vos-hd-3zq" secondAttribute="bottom" id="Koi-fi-Sq5"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="top" secondItem="qRb-Uj-d5e" secondAttribute="bottom" constant="8" id="LwW-wV-T3P"/>
+                            <constraint firstItem="qRb-Uj-d5e" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" constant="353" id="baf-rh-uJ4"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" id="dKZ-dg-TTE"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" id="hCL-GG-rVC"/>
+                            <constraint firstItem="vos-hd-3zq" firstAttribute="trailing" secondItem="qRb-Uj-d5e" secondAttribute="trailing" constant="39" id="hNs-jY-wF8"/>
+                            <constraint firstItem="qRb-Uj-d5e" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" constant="266" id="qfv-00-VAG"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="trailing" secondItem="Jc4-Uv-QTL" secondAttribute="trailing" id="tqW-Nr-cbR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
+                    <connections>
+                        <outlet property="saveButton" destination="qRb-Uj-d5e" id="DLO-Q9-r0p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1919.2" y="112.89355322338831"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

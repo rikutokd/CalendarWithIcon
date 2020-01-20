@@ -94,15 +94,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 extension ViewController {
     
     @IBAction func saveButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "toImageView", sender: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toImageView") {
-            let nextVC = (segue.destination as? ImageViewController)!
-            
-            nextVC.tappedDate = ""
-        }
+        self.performSegue(withIdentifier: "toImageView", sender: self)
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){

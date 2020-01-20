@@ -10,6 +10,8 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     var tappedDate: String?
     var selectedImage : UIImage?
     
+    @IBOutlet weak var saveButton: UIButton!
+    
     var datePicker: UIDatePicker = UIDatePicker()
     
     override func viewDidLoad() {
@@ -21,6 +23,19 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
+        
+        //saveボタン設定
+        self.saveButton.frame = CGRect(x: 299, y: 363, width: 70, height: 70)
+        let saveIcon = UIImage(systemName: "plus")
+        
+        self.saveButton.setImage(saveIcon, for: .normal)
+        
+        let saveBtn = saveButton
+        
+        saveBtn?.tintColor = .white
+        saveBtn?.backgroundColor = .systemBlue
+        saveBtn!.layer.cornerRadius = 35
+        
         
     }
     
@@ -79,20 +94,7 @@ extension ImageViewController {
         
         let pngImage = selectedImage?.pngData()
         
-        print(pngImage)
         
-                print("DBへの登録開始")
-        
-                let realm = try! Realm()
-        
-                try! realm.write{
-                    //日付とカレンダーの画像を型変換して保存
-                    let Events = [EventModel(value: ["icon": pngImage])]
-                    realm.add(Events)
-                    print("DBへ書き込み中")
-                }
-        
-                print("DBへ書き込み完了")
         
         
     }
