@@ -1,6 +1,7 @@
 import UIKit
 import FSCalendar
 import CalculateCalendarLogic
+import RealmSwift
 
 
 class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
@@ -114,6 +115,19 @@ extension ViewController {
         let strDate = f.string(from: date)
 
         print(strDate)
+        
+        print("日付の登録を開始")
+        
+        let realm = try! Realm()
+        
+                try! realm.write{
+                    //日付保存
+                    let Events = [EventModel(value: ["date":strDate])]
+                    realm.add(Events)
+                    print("DBへ書き込み中")
+                }
+        
+        print("日付の登録完了")
         
     }
     

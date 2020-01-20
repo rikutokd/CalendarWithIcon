@@ -10,27 +10,6 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     var tappedDate: String?
     var selectedImage : UIImage?
     
-//    @IBOutlet weak var save: UIBarButtonItem!
-    
-//    @IBAction func save(_ sender: Any) {
-//
-//        print("DBへの登録開始")
-//
-//        let realm = try! Realm()
-//
-//        try! realm.write{
-//            //日付とカレンダーの画像を型変換して保存
-//            let Events = [EventModel(value: ["date":tappedDate, "icon": iconImage])]
-//            realm.add(Events)
-//            print("DBへ書き込み中")
-//        }
-//
-//        print("DBへ書き込み完了")
-//
-//        self.navigationController?.popViewController(animated: true)
-//
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,7 +70,23 @@ extension ImageViewController {
         // [indexPath.row] から画像名を探し、UImage を設定
         selectedImage = UIImage(named: photos[indexPath.row])
         
-        print(selectedImage)
-        print(tappedDate)
+        let pngImage = selectedImage?.pngData()
+        
+        print(pngImage)
+        
+                print("DBへの登録開始")
+        
+                let realm = try! Realm()
+        
+                try! realm.write{
+                    //日付とカレンダーの画像を型変換して保存
+                    let Events = [EventModel(value: ["icon": pngImage])]
+                    realm.add(Events)
+                    print("DBへ書き込み中")
+                }
+        
+                print("DBへ書き込み完了")
+        
+        
     }
 }
