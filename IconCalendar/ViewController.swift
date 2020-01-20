@@ -6,8 +6,12 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
     var selectedDate : String?
     
+    
     @IBOutlet weak var calendar: FSCalendar!
     
+    @IBAction func addButton(_ sender: Any) {
+        goToNextPage()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,25 +96,30 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
 extension ViewController {
     
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         
         let f = DateFormatter()
         f.dateStyle = .long
         f.timeStyle = .none
         f.locale = Locale(identifier: "ja_JP")
-
-        print(f.string(from: date))
         
-        func segueToImageViewController(){
-            self.performSegue(withIdentifier: "toImageView", sender: f.string(from: date))
-        }
+        let strDate = f.string(from: date)
 
+        print(strDate)
+        
+    }
+    
+    func goToNextPage(){
+        
+        let strDate = Date.self
+        self.performSegue(withIdentifier: "toImageView", sender: strDate)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        if segue.identifier == "toImageView" {
             let nextVC = segue.destination as! ImageViewController
-
+            nextVC.tappedDate = sender as? String
+        }
     }
     
 }
