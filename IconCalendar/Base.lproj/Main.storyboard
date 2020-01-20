@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnR-GH-NDT">
-                                <rect key="frame" x="319" y="0.0" width="40" height="34"/>
-                                <state key="normal" title="Save">
+                                <rect key="frame" x="326" y="0.0" width="33" height="34"/>
+                                <state key="normal" title="Add">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -100,6 +100,10 @@
                                     <outlet property="delegate" destination="xcL-FG-lYe" id="6Tb-SI-2JP"/>
                                 </connections>
                             </collectionView>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-pb-wXj">
+                                <rect key="frame" x="0.0" y="417" width="375" height="230"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>

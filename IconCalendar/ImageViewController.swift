@@ -10,10 +10,17 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     var tappedDate: String?
     var selectedImage : UIImage?
     
+    var datePicker: UIDatePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.overrideUserInterfaceStyle = .light
+        
+        //ピッカー設定
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.locale = Locale.current
         
     }
     

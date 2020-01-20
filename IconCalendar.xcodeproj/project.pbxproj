@@ -15,7 +15,6 @@
 		262AACA423CE0337001AB3DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262AACA323CE0337001AB3DE /* Assets.xcassets */; };
 		262AACA723CE0337001AB3DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262AACA523CE0337001AB3DE /* LaunchScreen.storyboard */; };
 		2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654C47C23CF0AA20017672A /* ImageViewController.swift */; };
-		267E6DBA23D1246B003963BB /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E6DB923D1246B003963BB /* TextViewController.swift */; };
 		267E6DC023D22510003963BB /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E6DBF23D22510003963BB /* EventModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		262AACA623CE0337001AB3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262AACA823CE0337001AB3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2654C47C23CF0AA20017672A /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		267E6DB923D1246B003963BB /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		267E6DBF23D22510003963BB /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		927F26DE204E4EECF0B0B480 /* Pods-IconCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconCalendar.release.xcconfig"; path = "Target Support Files/Pods-IconCalendar/Pods-IconCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		FA3DFD6BB52E409F4BA6766E /* Pods-IconCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconCalendar.debug.xcconfig"; path = "Target Support Files/Pods-IconCalendar/Pods-IconCalendar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 				262AAC9C23CE0336001AB3DE /* SceneDelegate.swift */,
 				262AAC9E23CE0336001AB3DE /* ViewController.swift */,
 				2654C47C23CF0AA20017672A /* ImageViewController.swift */,
-				267E6DB923D1246B003963BB /* TextViewController.swift */,
 				262AACA023CE0336001AB3DE /* Main.storyboard */,
 				262AACA323CE0337001AB3DE /* Assets.xcassets */,
 				262AACA523CE0337001AB3DE /* LaunchScreen.storyboard */,
@@ -215,7 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				267E6DBA23D1246B003963BB /* TextViewController.swift in Sources */,
 				262AAC9F23CE0336001AB3DE /* ViewController.swift in Sources */,
 				262AAC9B23CE0336001AB3DE /* AppDelegate.swift in Sources */,
 				2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */,
