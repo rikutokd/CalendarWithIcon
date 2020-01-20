@@ -2,16 +2,12 @@ import UIKit
 import FSCalendar
 import CalculateCalendarLogic
 
+
 class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
 
     var selectedDate : String?
     
-    
     @IBOutlet weak var calendar: FSCalendar!
-    
-    @IBAction func addButton(_ sender: Any) {
-        goToNextPage()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +92,18 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
 extension ViewController {
     
+    @IBAction func saveButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "toImageView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toImageView") {
+            let nextVC = (segue.destination as? ImageViewController)!
+            
+            nextVC.tappedDate = ""
+        }
+    }
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         
         let f = DateFormatter()
@@ -107,19 +115,6 @@ extension ViewController {
 
         print(strDate)
         
-    }
-    
-    func goToNextPage(){
-        
-        let strDate = Date.self
-        self.performSegue(withIdentifier: "toImageView", sender: strDate)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toImageView" {
-            let nextVC = segue.destination as! ImageViewController
-            nextVC.tappedDate = sender as? String
-        }
     }
     
 }

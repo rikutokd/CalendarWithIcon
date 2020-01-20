@@ -10,7 +10,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     var tappedDate: String?
     var selectedImage : UIImage?
     
-    @IBOutlet weak var save: UIBarButtonItem!
+//    @IBOutlet weak var save: UIBarButtonItem!
     
 //    @IBAction func save(_ sender: Any) {
 //
@@ -32,8 +32,10 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
 //    }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         self.overrideUserInterfaceStyle = .light
-
+        
     }
     
     //cellの横幅、高さ設定
