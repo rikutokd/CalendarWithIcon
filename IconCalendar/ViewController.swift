@@ -11,6 +11,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var dateText: UILabel!
     
+    @IBOutlet weak var dateIcon: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // デリゲートの設定
@@ -120,16 +123,25 @@ extension ViewController {
         let d = String(format: "%02d", day)
 
         let da = "\(year)/\(m)/\(d)"
+        
+        
         //スケジュール取得
         let realm = try! Realm()
-        var getEvents = realm.objects(EventModel.self)
-        getEvents = getEvents.filter("date = '\(da)'")
-        print(getEvents)
-        for ev in getEvents {
+        
+        var eventsDate = realm.objects(EventModel.self)
+        eventsDate = eventsDate.filter("date = '\(da)'")
+        print(eventsDate)
+        
+        for ev in eventsDate {
             if ev.date == da {
+                let uiImage: UIImage = UIImage(data: ev.icon!)!
+                
                 dateText.text = ev.date
                 dateText.textColor = .black
-            }
+                
+                dateIcon.image = uiImage
+                
+                }
         }
         
         

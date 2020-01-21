@@ -68,6 +68,7 @@
                     <connections>
                         <outlet property="addButton" destination="v7E-RZ-UfQ" id="GNe-0j-NyO"/>
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
+                        <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="dateText" destination="X0a-oX-Saf" id="RfX-Mo-4rh"/>
                     </connections>
                 </viewController>
