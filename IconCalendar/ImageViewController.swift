@@ -10,16 +10,6 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var selectedIconArray : [Data] = []
     
-    //UserDefaults のインスタンス生成
-     let userDefaults = UserDefaults.standard
-
-     // ドキュメントディレクトリの「ファイルURL」（URL型）定義
-     var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-
-     // ドキュメントディレクトリの「パス」（String型）定義
-     let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-
-    
     @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -55,7 +45,6 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         saveBtn!.addTarget(self, action: #selector(saveEvent(_:)),for: .touchUpInside)
         
-        //選択された画像の設定
         
     }
     
@@ -129,41 +118,7 @@ extension ImageViewController {
     
     @objc func saveEvent(_ : UIButton) {
         
-        //②保存するためのパスを作成する
-        func createLocalDataFile() {
-            // 作成する画像の名前
-            let fileName = "localData.png"
-
-            // DocumentディレクトリのfileURLを取得
-            if documentDirectoryFileURL != nil {
-                // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
-                let path = documentDirectoryFileURL.appendingPathComponent(fileName)
-                documentDirectoryFileURL = path
-            }
-        }
         
-        //画像を保存する関数の部分
-            func saveImage() {
-                createLocalDataFile()
-                //pngで保存する場合
-                let pngImageData = (selectedIconArray.first!)
-                do {
-                    try pngImageData.write(to: documentDirectoryFileURL)
-                    //②「Documents下のパス情報をUserDefaultsに保存する」
-                    userDefaults.set(documentDirectoryFileURL, forKey: "userImage")
-                } catch {
-                    //エラー処理
-                    print("エラー")
-                }
-            }
-        
-               // ③UserDefaultsの情報を参照してpath指定に使う
-//                let path = String(describing: UserDefaults.standard.url(forKey: "userImage"))
-//          if let image = UIImage(contentsOfFile: documentDirectoryFileURL.path)
-                   
-//        print(documentDirectoryFileURL.path)
-
-        print("userDefaultsにpngData保存完了")
         print("DB書き込み開始")
         
         
