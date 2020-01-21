@@ -1,17 +1,26 @@
 import UIKit
 import RealmSwift
 
-    private let photos = ["Airplane",
-                                    "Train",
-                                    "Hotel",
-                                    "Bag",
-                                    "Basketball",
-                                    "Coffee",
-                                    "Computer",
-                                    "Mic",
-                                    "Piano",
-                                    "Radio",
-                                    "Video",]
+    private let photos = [
+"Coffee01",
+"Coffee02",
+"Computer",
+"Desk",
+"Diary",
+"Grass",
+"Lamp",
+"Mail",
+"Mouse",
+"Music",
+"PencilStand",
+"PenTab",
+"Picture",
+"Prize",
+"Radio",
+"Timer",
+"USB",
+"Workspace",
+]
 
     
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
