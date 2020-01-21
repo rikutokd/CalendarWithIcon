@@ -8,7 +8,9 @@ import RealmSwift
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
    
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    
     var datePicker: UIDatePicker = UIDatePicker()
     
     override func viewDidLoad() {
@@ -97,6 +99,12 @@ extension ImageViewController {
     
     @objc func saveEvent(_ : UIButton) {
         print("データ書き込み開始")
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+//        dateText = "\(formatter.string(from: Date()))"
+//
+//        print(dateText)
     }
     
 }
