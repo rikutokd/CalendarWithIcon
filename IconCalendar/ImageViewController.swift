@@ -68,8 +68,8 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     //cellの横幅、高さ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
-        let height: CGFloat = 128
-        let width: CGFloat = 128
+        let height: CGFloat = 256
+        let width: CGFloat = 256
         
         return CGSize(width: width, height: height)
         
@@ -99,7 +99,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-                return CGFloat(-20)
+                return CGFloat(0)
         }
     
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
