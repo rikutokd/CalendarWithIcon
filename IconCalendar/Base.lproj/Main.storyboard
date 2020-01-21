@@ -46,6 +46,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWa-3v-l68">
+                                <rect key="frame" x="16" y="20" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="trash.circle" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -67,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="v7E-RZ-UfQ" id="GNe-0j-NyO"/>
+                        <outlet property="allDeleteBtn" destination="IWa-3v-l68" id="Ac9-8e-YV4"/>
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
                         <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="dateText" destination="X0a-oX-Saf" id="RfX-Mo-4rh"/>
@@ -168,5 +174,6 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="trash.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>

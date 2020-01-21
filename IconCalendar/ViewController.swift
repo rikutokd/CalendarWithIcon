@@ -7,11 +7,15 @@ import RealmSwift
 class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
     
     @IBOutlet weak var calendar: FSCalendar!
+    
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var dateText: UILabel!
     
     @IBOutlet weak var dateIcon: UIImageView!
+    
+    @IBOutlet weak var allDeleteBtn: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -31,6 +35,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.overrideUserInterfaceStyle = .light
 
         addButton.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
+        allDeleteBtn.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         
     }
     
@@ -115,6 +120,9 @@ extension ViewController {
         dateText.text = "イベントはありません"
         dateText.textColor = .lightGray
         
+        //初期値で"nosign"imageセット
+        dateIcon.image = UIImage(systemName: "nosign")
+        
         let tmpDate = Calendar(identifier: .gregorian)
         let year = tmpDate.component(.year, from: date)
         let month = tmpDate.component(.month, from: date)
@@ -134,12 +142,12 @@ extension ViewController {
         
         for ev in eventsDate {
             if ev.date == da {
-                let uiImage: UIImage = UIImage(data: ev.icon!)!
+                let eventIcon: UIImage = UIImage(data: ev.icon!)!
                 
                 dateText.text = ev.date
                 dateText.textColor = .black
                 
-                dateIcon.image = uiImage
+                dateIcon.image = eventIcon
                 
                 }
         }
@@ -151,6 +159,15 @@ extension ViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert") as! ImageViewController
         self.present(SecondController, animated: true, completion: nil)
+    }
+    
+    @objc func deleteBtn(_: UIButton){
+        let realm = try! Realm()
+        
+        // Delete all objects from the realm
+        try! realm.write {
+            realm.deleteAll()
+        }
     }
             
 }
