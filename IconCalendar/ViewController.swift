@@ -9,8 +9,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     var selectedDate : String?
     
     @IBOutlet weak var calendar: FSCalendar!
-    
     @IBOutlet weak var addButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,8 +110,10 @@ extension ViewController {
                 
     }
     
-    @objc func addEvents(_: UIButton){
-        let NextViewController = self.storyboard?.instantiateViewController(withIdentifier: "NextViewController") as! ImageViewController
+    @objc func addEvents(_: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert") as! ImageViewController
+        self.present(SecondController, animated: true, completion: nil)
     }
             
 }
