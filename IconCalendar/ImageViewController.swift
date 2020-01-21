@@ -5,14 +5,27 @@ import RealmSwift
                           "Train",
                           "Hotel",]
 
+    
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    var selectedIconArray : [Data] = []
+    
+    //UserDefaults のインスタンス生成
+     let userDefaults = UserDefaults.standard
+
+     // ドキュメントディレクトリの「ファイルURL」（URL型）定義
+     var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+
+     // ドキュメントディレクトリの「パス」（String型）定義
+     let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+
     
     @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var dateText: UILabel!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +54,8 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         saveBtn!.layer.cornerRadius = 35
         
         saveBtn!.addTarget(self, action: #selector(saveEvent(_:)),for: .touchUpInside)
+        
+        //選択された画像の設定
         
     }
     
@@ -95,28 +110,73 @@ extension ImageViewController {
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
         var selectedImage : UIImage?
+        var pngSelectedIcon : Data?
         
         selectedImage = UIImage(named: photos[indexPath.row])
         
+        //選択されている画像出力
         print(selectedImage!)
+        
+        //選択画像をpngに変換
+        pngSelectedIcon = selectedImage!.pngData()
+        
+        //pngを空配列に格納
+        selectedIconArray.append(pngSelectedIcon!)
+        
+        print(selectedIconArray)
         
     }
     
     @objc func saveEvent(_ : UIButton) {
-        print("DB書き込み開始")
         
+        //②保存するためのパスを作成する
+        func createLocalDataFile() {
+            // 作成する画像の名前
+            let fileName = "localData.png"
+
+            // DocumentディレクトリのfileURLを取得
+            if documentDirectoryFileURL != nil {
+                // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
+                let path = documentDirectoryFileURL.appendingPathComponent(fileName)
+                documentDirectoryFileURL = path
+            }
+        }
+        
+        //画像を保存する関数の部分
+            func saveImage() {
+                createLocalDataFile()
+                //pngで保存する場合
+                let pngImageData = (selectedIconArray.first!)
+                do {
+                    try pngImageData.write(to: documentDirectoryFileURL)
+                    //②「Documents下のパス情報をUserDefaultsに保存する」
+                    userDefaults.set(documentDirectoryFileURL, forKey: "userImage")
+                } catch {
+                    //エラー処理
+                    print("エラー")
+                }
+            }
+        
+               // ③UserDefaultsの情報を参照してpath指定に使う
+//                let path = String(describing: UserDefaults.standard.url(forKey: "userImage"))
+//          if let image = UIImage(contentsOfFile: documentDirectoryFileURL.path)
+                   
+//        print(documentDirectoryFileURL.path)
+
+        print("userDefaultsにpngData保存完了")
+        print("DB書き込み開始")
         
         
         let realm = try! Realm()
 
-//        try! realm.write {
-//            //日付表示の内容とスケジュール入力の内容が書き込まれる。
-//                let Events = [EventModel(value: ["date": ])]
-//                
-//                realm.add(Events)
-//                print("DB書き込み中")
-//
-//                }
+        try! realm.write {
+            //日付表示の内容とスケジュール入力の内容が書き込まれる。
+            let Events = [EventModel(value: ["date": dateText.text!, "icon": selectedIconArray.first!])]
+            
+                realm.add(Events)
+                print("DB書き込み中")
+
+                }
         
         print("データ書き込み完了")
 
@@ -134,5 +194,5 @@ extension ImageViewController {
             print(dateText.text!)
         }
     
-    }
+}
 
