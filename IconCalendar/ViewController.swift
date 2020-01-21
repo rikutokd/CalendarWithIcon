@@ -9,6 +9,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var dateText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +106,33 @@ extension ViewController {
         let strDate = f.string(from: date)
 
         print(strDate)
-                
+        
+        //予定がある場合、イベントをDBから取得・表示する。
+        //無い場合、「イベントはありません」と表示。
+        dateText.text = "イベントはありません"
+        dateText.textColor = .lightGray
+        
+        let tmpDate = Calendar(identifier: .gregorian)
+        let year = tmpDate.component(.year, from: date)
+        let month = tmpDate.component(.month, from: date)
+        let day = tmpDate.component(.day, from: date)
+        let m = String(format: "%02d", month)
+        let d = String(format: "%02d", day)
+
+        let da = "\(year)/\(m)/\(d)"
+        //スケジュール取得
+        let realm = try! Realm()
+        var getEvents = realm.objects(EventModel.self)
+        getEvents = getEvents.filter("date = '\(da)'")
+        print(getEvents)
+        for ev in getEvents {
+            if ev.date == da {
+                dateText.text = ev.date
+                dateText.textColor = .black
+            }
+        }
+        
+        
     }
     
     @objc func addEvents(_: UIButton) {
