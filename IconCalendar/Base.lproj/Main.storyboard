@@ -37,8 +37,13 @@
                                     <constraint firstAttribute="height" constant="128" id="D9U-QC-voW"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWa-3v-l68">
+                                <rect key="frame" x="16" y="20" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="trash.circle" catalog="system"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0a-oX-Saf">
-                                <rect key="frame" x="8" y="473" width="180" height="43"/>
+                                <rect key="frame" x="97" y="468" width="180" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Zdg-kD-0Ar"/>
                                 </constraints>
@@ -46,22 +51,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWa-3v-l68">
-                                <rect key="frame" x="16" y="20" width="20" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="trash.circle" catalog="system"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="leading" secondItem="A51-41-4cK" secondAttribute="leading" id="Hw4-iU-aHt"/>
-                            <constraint firstItem="A51-41-4cK" firstAttribute="top" secondItem="X0a-oX-Saf" secondAttribute="bottom" constant="3" id="IAq-EM-YGB"/>
-                            <constraint firstItem="X0a-oX-Saf" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="8" id="Kiy-qT-LaN"/>
+                            <constraint firstItem="A51-41-4cK" firstAttribute="top" secondItem="X0a-oX-Saf" secondAttribute="bottom" constant="8" id="IAq-EM-YGB"/>
+                            <constraint firstItem="X0a-oX-Saf" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="3" id="Kiy-qT-LaN"/>
                             <constraint firstItem="v7E-RZ-UfQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="329" id="OM0-38-myn"/>
                             <constraint firstItem="v7E-RZ-UfQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="WY6-z7-f7x"/>
-                            <constraint firstItem="X0a-oX-Saf" firstAttribute="centerX" secondItem="A51-41-4cK" secondAttribute="centerX" constant="34" id="XGl-QL-Zmo"/>
+                            <constraint firstItem="X0a-oX-Saf" firstAttribute="centerX" secondItem="A51-41-4cK" secondAttribute="centerX" constant="123" id="XGl-QL-Zmo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A51-41-4cK" secondAttribute="bottom" constant="20" id="Yjv-oL-oXC"/>
-                            <constraint firstItem="X0a-oX-Saf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="et9-rf-6lj"/>
+                            <constraint firstItem="X0a-oX-Saf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="et9-rf-6lj"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oCE-1N-2W9"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qNI-gF-vg6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A51-41-4cK" secondAttribute="trailing" constant="247" id="tGq-Za-pIg"/>
