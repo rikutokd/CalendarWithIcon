@@ -7,11 +7,12 @@ import RealmSwift
 
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-   
-    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
-    var datePicker: UIDatePicker = UIDatePicker()
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBOutlet weak var dateText: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +20,13 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.overrideUserInterfaceStyle = .light
         
         //ピッカー設定
+        
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
+        
+        datePicker.addTarget(self, action: #selector(picker(_:)), for: .valueChanged)
+        
         
         //saveボタン設定
         self.saveButton.frame = CGRect(x: 299, y: 363, width: 70, height: 70)
@@ -90,7 +95,7 @@ extension ImageViewController {
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
         var selectedImage : UIImage?
-        // [indexPath.row] から画像名を探し、UImage を設定
+        
         selectedImage = UIImage(named: photos[indexPath.row])
         
         print(selectedImage!)
@@ -98,13 +103,36 @@ extension ImageViewController {
     }
     
     @objc func saveEvent(_ : UIButton) {
-        print("データ書き込み開始")
+        print("DB書き込み開始")
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-//        dateText = "\(formatter.string(from: Date()))"
+        
+        
+        let realm = try! Realm()
+
+//        try! realm.write {
+//            //日付表示の内容とスケジュール入力の内容が書き込まれる。
+//                let Events = [EventModel(value: ["date": ])]
+//                
+//                realm.add(Events)
+//                print("DB書き込み中")
 //
-//        print(dateText)
+//                }
+        
+        print("データ書き込み完了")
+
+        //前のページに戻る
+        dismiss(animated: true, completion: nil)
+        
     }
     
-}
+   //日付フォーム
+        @objc func picker(_ sender:UIDatePicker){
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            dateText.text = formatter.string(from: sender.date)
+        
+            print(dateText.text!)
+        }
+    
+    }
+

@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jc4-Uv-QTL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Y4i-Px-jN3">
                                     <size key="itemSize" width="50" height="50"/>
@@ -95,9 +95,6 @@
                                     <outlet property="delegate" destination="xcL-FG-lYe" id="6Tb-SI-2JP"/>
                                 </connections>
                             </collectionView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-pb-wXj">
-                                <rect key="frame" x="0.0" y="431" width="375" height="216"/>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chE-2S-aKX">
                                 <rect key="frame" x="270" y="353" width="70" height="70"/>
                                 <constraints>
@@ -105,35 +102,39 @@
                                 </constraints>
                                 <state key="normal" image="plus" catalog="system"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=":日付" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDi-bp-kD0">
-                                <rect key="frame" x="0.0" y="389" width="150" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="rXX-Oj-RZe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付を選択して下さい" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHB-6m-3vy">
+                                <rect key="frame" x="93" y="20" width="189" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-pb-wXj">
+                                <rect key="frame" x="0.0" y="499" width="375" height="168"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vos-hd-3zq" firstAttribute="trailing" secondItem="chE-2S-aKX" secondAttribute="trailing" constant="35" id="0Zd-Qb-eYo"/>
-                            <constraint firstItem="d3g-pb-wXj" firstAttribute="top" secondItem="chE-2S-aKX" secondAttribute="bottom" constant="8" id="5Vt-Ec-ysv"/>
+                            <constraint firstItem="uHB-6m-3vy" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" constant="20" id="8US-ZL-pyg"/>
                             <constraint firstItem="chE-2S-aKX" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" constant="270" id="A3R-OQ-M6i"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="centerX" secondItem="Na5-hJ-sIZ" secondAttribute="centerX" id="EEE-iQ-Tf8"/>
-                            <constraint firstItem="XDi-bp-kD0" firstAttribute="leading" secondItem="d3g-pb-wXj" secondAttribute="leading" id="FWH-gC-ZW0"/>
-                            <constraint firstItem="d3g-pb-wXj" firstAttribute="leading" secondItem="Jc4-Uv-QTL" secondAttribute="leading" id="Hje-8z-PFW"/>
-                            <constraint firstItem="XDi-bp-kD0" firstAttribute="bottom" secondItem="chE-2S-aKX" secondAttribute="bottom" id="KkH-qJ-uZe"/>
-                            <constraint firstItem="Jc4-Uv-QTL" firstAttribute="bottom" secondItem="vos-hd-3zq" secondAttribute="bottom" id="Koi-fi-Sq5"/>
+                            <constraint firstItem="uHB-6m-3vy" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" constant="93" id="EVq-N4-Lb2"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="trailing" secondItem="Jc4-Uv-QTL" secondAttribute="trailing" id="GzL-JW-WVo"/>
+                            <constraint firstItem="Jc4-Uv-QTL" firstAttribute="bottom" secondItem="vos-hd-3zq" secondAttribute="bottom" constant="-176" id="Koi-fi-Sq5"/>
                             <constraint firstItem="chE-2S-aKX" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" constant="353" id="YSt-TC-VSN"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="centerX" secondItem="uHB-6m-3vy" secondAttribute="centerX" id="ajJ-8R-OiS"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" id="dKZ-dg-TTE"/>
-                            <constraint firstItem="Jc4-Uv-QTL" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" id="hCL-GG-rVC"/>
-                            <constraint firstItem="d3g-pb-wXj" firstAttribute="trailing" secondItem="Jc4-Uv-QTL" secondAttribute="trailing" id="tqW-Nr-cbR"/>
+                            <constraint firstItem="Jc4-Uv-QTL" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" constant="55" id="hCL-GG-rVC"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="bottom" secondItem="vos-hd-3zq" secondAttribute="bottom" id="iuV-tV-Utf"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="top" secondItem="Jc4-Uv-QTL" secondAttribute="bottom" constant="8" id="kfY-NB-QsC"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="leading" secondItem="Jc4-Uv-QTL" secondAttribute="leading" id="rqS-vL-Ehe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="d3g-pb-wXj" id="Lvd-PL-0Wj"/>
+                        <outlet property="dateText" destination="uHB-6m-3vy" id="Fwr-1w-Vje"/>
                         <outlet property="saveButton" destination="chE-2S-aKX" id="2ZX-6R-iSN"/>
-                        <outlet property="textField" destination="XDi-bp-kD0" id="pjC-dq-VCR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
