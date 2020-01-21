@@ -7,11 +7,8 @@ import RealmSwift
 
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    var tappedDate: String?
-    var selectedImage : UIImage?
-    
+   
     @IBOutlet weak var saveButton: UIButton!
-    
     var datePicker: UIDatePicker = UIDatePicker()
     
     override func viewDidLoad() {
@@ -89,11 +86,12 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 extension ImageViewController {
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-            
+        
+        var selectedImage : UIImage?
         // [indexPath.row] から画像名を探し、UImage を設定
         selectedImage = UIImage(named: photos[indexPath.row])
         
-        let pngImage = selectedImage?.pngData()
+        print(selectedImage!)
         
     }
     

@@ -27,9 +27,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qce-AN-lnh"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7E-RZ-UfQ">
-                                <rect key="frame" x="321" y="4" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7E-RZ-UfQ">
+                                <rect key="frame" x="329" y="4" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                             </button>
                         </subviews>
@@ -39,6 +38,8 @@
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="OSZ-z1-dW0"/>
                             <constraint firstAttribute="bottom" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="202" id="RoM-fW-ljn"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xkn-ak-zHY"/>
+                            <constraint firstItem="v7E-RZ-UfQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kaH-iN-xE1"/>
+                            <constraint firstItem="v7E-RZ-UfQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="uDA-lh-4KH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -97,35 +98,31 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-pb-wXj">
                                 <rect key="frame" x="0.0" y="431" width="375" height="216"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRb-Uj-d5e">
-                                <rect key="frame" x="266" y="353" width="70" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chE-2S-aKX">
+                                <rect key="frame" x="270" y="353" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="1WE-bc-sDI"/>
-                                    <constraint firstAttribute="width" constant="70" id="iYs-gi-n5N"/>
+                                    <constraint firstAttribute="height" constant="70" id="zIX-vL-guv"/>
                                 </constraints>
                                 <state key="normal" image="plus" catalog="system"/>
-                                <connections>
-                                    <action selector="saveButton:" destination="xcL-FG-lYe" eventType="touchUpInside" id="t0M-8T-VLP"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="vos-hd-3zq" firstAttribute="trailing" secondItem="chE-2S-aKX" secondAttribute="trailing" constant="35" id="0Zd-Qb-eYo"/>
+                            <constraint firstItem="d3g-pb-wXj" firstAttribute="top" secondItem="chE-2S-aKX" secondAttribute="bottom" constant="8" id="5Vt-Ec-ysv"/>
+                            <constraint firstItem="chE-2S-aKX" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" constant="270" id="A3R-OQ-M6i"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="centerX" secondItem="Na5-hJ-sIZ" secondAttribute="centerX" id="EEE-iQ-Tf8"/>
                             <constraint firstItem="d3g-pb-wXj" firstAttribute="leading" secondItem="Jc4-Uv-QTL" secondAttribute="leading" id="Hje-8z-PFW"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="bottom" secondItem="vos-hd-3zq" secondAttribute="bottom" id="Koi-fi-Sq5"/>
-                            <constraint firstItem="d3g-pb-wXj" firstAttribute="top" secondItem="qRb-Uj-d5e" secondAttribute="bottom" constant="8" id="LwW-wV-T3P"/>
-                            <constraint firstItem="qRb-Uj-d5e" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" constant="353" id="baf-rh-uJ4"/>
+                            <constraint firstItem="chE-2S-aKX" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" constant="353" id="YSt-TC-VSN"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" id="dKZ-dg-TTE"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="top" secondItem="vos-hd-3zq" secondAttribute="top" id="hCL-GG-rVC"/>
-                            <constraint firstItem="vos-hd-3zq" firstAttribute="trailing" secondItem="qRb-Uj-d5e" secondAttribute="trailing" constant="39" id="hNs-jY-wF8"/>
-                            <constraint firstItem="qRb-Uj-d5e" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" constant="266" id="qfv-00-VAG"/>
                             <constraint firstItem="d3g-pb-wXj" firstAttribute="trailing" secondItem="Jc4-Uv-QTL" secondAttribute="trailing" id="tqW-Nr-cbR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
                     <connections>
-                        <outlet property="saveButton" destination="qRb-Uj-d5e" id="xBL-dP-dtq"/>
+                        <outlet property="saveButton" destination="chE-2S-aKX" id="2ZX-6R-iSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

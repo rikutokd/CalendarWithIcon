@@ -5,8 +5,6 @@ import RealmSwift
 
 
 class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
-
-    var selectedDate : String?
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var addButton: UIButton!
