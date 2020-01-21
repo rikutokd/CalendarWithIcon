@@ -20,6 +20,7 @@ import RealmSwift
 "Timer",
 "USB",
 "Workspace",
+"video-recorder",
 ]
 
     
