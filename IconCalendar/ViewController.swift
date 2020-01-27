@@ -16,6 +16,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var allDeleteBtn: UIButton!
     
+    var pickedDate = ""
     
     
     override func viewDidLoad() {
@@ -115,6 +116,11 @@ extension ViewController {
 
         print(strDate)
         
+        
+        self.pickedDate = strDate
+        
+        print(pickedDate)
+        
         //予定がある場合、イベントをDBから取得・表示する。
         //無い場合、「イベントはありません」と表示。
         dateText.text = "イベントはありません"
@@ -156,9 +162,14 @@ extension ViewController {
     }
     
     @objc func addEvents(_: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert") as! ImageViewController
-        self.present(SecondController, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "toImageView", sender: AnyObject?.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toImageView" {
+            let nextVC = segue.destination as! ImageViewController
+            nextVC.pickedDate = self.pickedDate
+        }
     }
     
     @objc func deleteBtn(_: UIButton){

@@ -26,27 +26,17 @@ import RealmSwift
     
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    var pickedDate = ""
+    
     var selectedIconArray : [Data] = []
     
     @IBOutlet weak var saveButton: UIButton!
-    
-    @IBOutlet weak var datePicker: UIDatePicker!
-    
-    @IBOutlet weak var dateText: UILabel!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.overrideUserInterfaceStyle = .light
-        
-        //ピッカー設定
-        
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.timeZone = NSTimeZone.local
-        datePicker.locale = Locale.current
-        
-        datePicker.addTarget(self, action: #selector(picker(_:)), for: .valueChanged)
         
         
         //saveボタン設定
@@ -132,6 +122,8 @@ extension ImageViewController {
         
         print(selectedIconArray)
         
+        print(pickedDate)
+        
     }
     
     @objc func saveEvent(_ : UIButton) {
@@ -144,7 +136,7 @@ extension ImageViewController {
 
         try! realm.write {
             //日付表示の内容とスケジュール入力の内容が書き込まれる。
-            let Events = [EventModel(value: ["date": dateText.text!, "icon": selectedIconArray.first!])]
+            let Events = [EventModel(value: ["date": pickedDate, "icon": selectedIconArray.first!])]
             
                 realm.add(Events)
                 print("DB書き込み中")
@@ -157,15 +149,6 @@ extension ImageViewController {
         dismiss(animated: true, completion: nil)
         
     }
-    
-   //日付フォーム
-        @objc func picker(_ sender:UIDatePicker){
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
-            dateText.text = formatter.string(from: sender.date)
-        
-            print(dateText.text!)
-        }
     
     
 }
