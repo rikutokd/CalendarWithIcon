@@ -165,10 +165,15 @@ extension ViewController {
     @objc func deleteBtn(_: UIButton){
         let realm = try! Realm()
         
+        print("DBのデータを全て削除")
+        
         // Delete all objects from the realm
         try! realm.write {
             realm.deleteAll()
         }
+        
+        print("削除完了")
+        
     }
             
 }
