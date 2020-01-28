@@ -113,9 +113,6 @@ extension ViewController {
         f.locale = Locale(identifier: "ja_JP")
         
         let strDate = f.string(from: date)
-
-        print(strDate)
-        
         
         self.pickedDate = strDate
         
@@ -128,16 +125,9 @@ extension ViewController {
         
         //初期値で"nosign"imageセット
         dateIcon.image = UIImage(systemName: "nosign")
-        
-        let tmpDate = Calendar(identifier: .gregorian)
-        let year = tmpDate.component(.year, from: date)
-        let month = tmpDate.component(.month, from: date)
-        let day = tmpDate.component(.day, from: date)
-        let m = String(format: "%02d", month)
-        let d = String(format: "%02d", day)
 
-        let da = "\(year)/\(m)/\(d)"
         
+        let da = f.string(from: date)
         
         //スケジュール取得
         let realm = try! Realm()
@@ -146,12 +136,12 @@ extension ViewController {
         eventsDate = eventsDate.filter("date = '\(da)'")
         print(eventsDate)
         
-        for ev in eventsDate {
-            if ev.date == da {
-                let eventIcon: UIImage = UIImage(data: ev.icon!)!
+        for gettingEvents in eventsDate {
+            if gettingEvents.date == da {
+                let eventIcon: UIImage = UIImage(data: gettingEvents.icon!)!
                 
-                dateText.text = ev.date
-                dateText.textColor = .black
+                dateText.text = ""
+                dateText.textColor = .clear
                 
                 dateIcon.image = eventIcon
                 
