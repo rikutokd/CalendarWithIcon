@@ -30,30 +30,18 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var selectedIconArray : [Data] = []
     
-    @IBOutlet weak var saveButton: UIButton!
-
+    
+    @IBOutlet weak var cancelBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var addBtn: UIBarButtonItem!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.overrideUserInterfaceStyle = .light
-        
-        
-        //saveボタン設定
-        self.saveButton.frame = CGRect(x: 299, y: 363, width: 70, height: 70)
-        let saveIcon = UIImage(systemName: "plus")
-        
-        self.saveButton.setImage(saveIcon, for: .normal)
-        
-        let saveBtn = saveButton
-        
-        saveBtn?.tintColor = .white
-        saveBtn?.backgroundColor = .systemBlue
-        saveBtn!.layer.cornerRadius = 35
-        
-        saveBtn!.addTarget(self, action: #selector(saveEvent(_:)),for: .touchUpInside)
-        
-        
+
     }
     
     //cellの横幅、高さ設定
@@ -126,7 +114,12 @@ extension ImageViewController {
         
     }
     
-    @objc func saveEvent(_ : UIButton) {
+    @objc func cancelEvent(_: UIBarButtonItem){
+        //前のページに戻る
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func addEvent(_ : UIBarButtonItem) {
         
         
         print("DB書き込み開始")
@@ -149,7 +142,7 @@ extension ImageViewController {
         dismiss(animated: true, completion: nil)
         
     }
-    
+
     
 }
 
