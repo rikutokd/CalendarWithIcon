@@ -144,7 +144,7 @@
                                                 <state key="normal" title="キャンセル"/>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="done" id="z5i-LM-MkS">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" style="done" id="z5i-LM-MkS">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WGC-jw-2YJ">
                                                 <rect key="frame" x="276" y="13" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

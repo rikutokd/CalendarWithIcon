@@ -44,7 +44,10 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         //ボタン設定2種
         cancelBtn!.addTarget(self, action: #selector(cancelEvent(_:)), for: .touchUpInside)
         
-        addBtn!.addTarget(self, action: #selector(addEvent(_:)), for: .touchUpInside)
+        addBtn!.addTarget(self, action: #selector(trySave(_:)), for: .touchUpInside)
+        
+        //追加ボタンを初期でdisable状態に
+        addBtn.isEnabled = false
 
     }
     
@@ -116,6 +119,9 @@ extension ImageViewController {
         
         print(pickedDate)
         
+        //選択されたら追加ボタンを可能状態に
+        addBtn.isEnabled = true
+        
     }
     
     @objc func cancelEvent(_: UIButton){
@@ -123,7 +129,7 @@ extension ImageViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func addEvent(_ : UIButton) {
+    @objc func trySave(_ : UIButton) {
         
         
         print("DB書き込み開始")
