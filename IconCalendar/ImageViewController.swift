@@ -30,17 +30,21 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var selectedIconArray : [Data] = []
     
+    @IBOutlet weak var cancelBtn: UIButton!
     
-    @IBOutlet weak var cancelBtn: UIBarButtonItem!
-    
-    @IBOutlet weak var addBtn: UIBarButtonItem!
-    
-    
+    @IBOutlet weak var addBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //iOSのモードをライトに
         self.overrideUserInterfaceStyle = .light
+        
+        
+        //ボタン設定2種
+        cancelBtn!.addTarget(self, action: #selector(cancelEvent(_:)), for: .touchUpInside)
+        
+        addBtn!.addTarget(self, action: #selector(addEvent(_:)), for: .touchUpInside)
 
     }
     
@@ -114,12 +118,12 @@ extension ImageViewController {
         
     }
     
-    @objc func cancelEvent(_: UIBarButtonItem){
+    @objc func cancelEvent(_: UIButton){
         //前のページに戻る
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func addEvent(_ : UIBarButtonItem) {
+    @objc func addEvent(_ : UIButton) {
         
         
         print("DB書き込み開始")

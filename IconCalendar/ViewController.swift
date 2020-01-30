@@ -8,9 +8,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var calendar: FSCalendar!
     
-    @IBOutlet weak var plusBtn: UIBarButtonItem!
+    @IBOutlet weak var plusBtn: UIButton!
     
-    @IBOutlet weak var deleteBtn: UIBarButtonItem!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     
     @IBOutlet weak var dateText: UILabel!
@@ -36,10 +36,15 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         calendar.calendarWeekdayView.weekdayLabels[6].text = "土"
         
         self.overrideUserInterfaceStyle = .light
-
-        self.plusBtn.addTargetForAction(target: self, action: #selector(addEvents(_:)))
+        
+        
+        //ボタン設定2種
+        plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
+        deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
+        
         
     }
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -151,7 +156,21 @@ extension ViewController {
         
     }
     
-    @objc func addEvents(_: UIBarButtonItem) {
+    @objc func deleteBtn(_ sender: UIButton){
+        let realm = try! Realm()
+        
+        print("DBのデータを全て削除")
+        
+        // Delete all objects from the realm
+        try! realm.write {
+            realm.deleteAll()
+        }
+        
+        print("削除完了")
+        
+    }
+    
+    @objc func addEvents(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toImageView", sender: AnyObject?.self)
     }
     
@@ -162,11 +181,4 @@ extension ViewController {
         }
     }
             
-}
-
-extension UIBarButtonItem {
-    func addTargetForAction(target: AnyObject, action: Selector) {
-        self.target = target
-        self.action = action
-    }
 }
