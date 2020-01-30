@@ -134,19 +134,20 @@
                                 </connections>
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKB-d2-6c7">
-                                <rect key="frame" x="0.0" y="15" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="barTintColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="0.90509952910958902" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="新規イベント" id="eCr-Hy-Jfp">
                                         <barButtonItem key="leftBarButtonItem" style="done" id="Diw-dW-Sai">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pax-b0-qCq">
-                                                <rect key="frame" x="16" y="13" width="83" height="30"/>
+                                                <rect key="frame" x="16" y="8" width="83" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="キャンセル"/>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" style="done" id="z5i-LM-MkS">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WGC-jw-2YJ">
-                                                <rect key="frame" x="276" y="13" width="83" height="30"/>
+                                                <rect key="frame" x="276" y="8" width="83" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="追加"/>
                                             </button>
@@ -161,9 +162,9 @@
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="leading" secondItem="vos-hd-3zq" secondAttribute="leading" id="K8T-0Z-etY"/>
                             <constraint firstItem="FKB-d2-6c7" firstAttribute="leading" secondItem="Jc4-Uv-QTL" secondAttribute="leading" id="cfc-c1-Eql"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="bottom" secondItem="vos-hd-3zq" secondAttribute="bottom" id="ecs-od-fZI"/>
-                            <constraint firstItem="Jc4-Uv-QTL" firstAttribute="top" secondItem="FKB-d2-6c7" secondAttribute="bottom" constant="-2" id="fV1-9x-eCQ"/>
+                            <constraint firstItem="Jc4-Uv-QTL" firstAttribute="top" secondItem="FKB-d2-6c7" secondAttribute="bottom" constant="13" id="fV1-9x-eCQ"/>
                             <constraint firstItem="Jc4-Uv-QTL" firstAttribute="centerX" secondItem="Na5-hJ-sIZ" secondAttribute="centerX" id="itX-Ha-RgC"/>
-                            <constraint firstItem="FKB-d2-6c7" firstAttribute="top" secondItem="Na5-hJ-sIZ" secondAttribute="topMargin" constant="15" id="klf-OU-45x"/>
+                            <constraint firstItem="FKB-d2-6c7" firstAttribute="top" secondItem="Na5-hJ-sIZ" secondAttribute="topMargin" id="klf-OU-45x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
@@ -184,6 +185,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H5Y-fS-xKn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="0.90509952910000002" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
