@@ -135,7 +135,7 @@
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKB-d2-6c7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="barTintColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="0.90509952910958902" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="新規イベント" id="eCr-Hy-Jfp">
                                         <barButtonItem key="leftBarButtonItem" style="done" id="Diw-dW-Sai">
@@ -168,6 +168,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vos-hd-3zq"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addBtn" destination="WGC-jw-2YJ" id="6Ae-bJ-6Xl"/>
                         <outlet property="cancelBtn" destination="pax-b0-qCq" id="2h5-vO-d52"/>
@@ -185,7 +186,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H5Y-fS-xKn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="0.90509952910000002" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -35,8 +35,11 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         calendar.calendarWeekdayView.weekdayLabels[5].text = "金"
         calendar.calendarWeekdayView.weekdayLabels[6].text = "土"
         
+        //ダークモードoff
         self.overrideUserInterfaceStyle = .light
         
+        //barのcolor設定
+        self.navigationController!.navigationBar.barTintColor = .systemYellow
         
         //ボタン設定2種
         plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
