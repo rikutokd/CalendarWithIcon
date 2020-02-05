@@ -10,5 +10,14 @@ import UIKit
 import RealmSwift
 
 class TextViewController: UIViewController {
+    var pickedDate = ""
+    
+    override func viewDidLoad() {
+        //iOSのモードをライトに
+        self.overrideUserInterfaceStyle = .light
+    }
+    
+    
+    
     
 }

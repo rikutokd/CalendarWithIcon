@@ -188,8 +188,15 @@ extension ViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toImageView" {
+            
             let nextVC = segue.destination as! ImageViewController
             nextVC.pickedDate = self.pickedDate
+            
+        } else if segue.identifier == "toTextView" {
+            
+            let nextVC = segue.destination as! TextViewController
+            nextVC.pickedDate = self.pickedDate
+            
         }
     }
             

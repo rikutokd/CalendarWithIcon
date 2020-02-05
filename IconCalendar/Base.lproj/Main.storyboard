@@ -81,6 +81,9 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="text.bubble" catalog="system"/>
                                 </button>
+                                <connections>
+                                    <segue destination="jM0-aV-Buc" kind="presentation" identifier="toTextView" id="WCM-fx-gih"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -186,14 +189,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857" y="-196"/>
+            <point key="canvasLocation" x="2956" y="475"/>
         </scene>
-        <!--View Controller-->
+        <!--Text View Controller-->
         <scene sceneID="44m-1d-Aec">
             <objects>
-                <viewController id="jM0-aV-Buc" sceneMemberID="viewController">
+                <viewController id="jM0-aV-Buc" customClass="TextViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYe-rp-Y39">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="g7b-Ff-QTP"/>
@@ -201,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bca-al-Wgl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857" y="484"/>
+            <point key="canvasLocation" x="2956" y="-287"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nOn-AC-lNy">
