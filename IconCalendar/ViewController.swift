@@ -12,6 +12,10 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var deleteBtn: UIButton!
     
+    @IBOutlet weak var textBtn: UIButton!
+    
+    
+    
     
     @IBOutlet weak var dateText: UILabel!
     
@@ -44,6 +48,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //ボタン設定2種
         plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
+        textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
         
         
     }
@@ -171,6 +176,10 @@ extension ViewController {
         
         print("削除完了")
         
+    }
+    
+    @objc func textAdd(_ sender: UIButton){
+        self.performSegue(withIdentifier: "toTextView", sender: AnyObject?.self)
     }
     
     @objc func addEvents(_ sender: UIButton) {
