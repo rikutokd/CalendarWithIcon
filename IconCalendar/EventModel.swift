@@ -12,4 +12,5 @@ import RealmSwift
 class EventModel: Object {
     @objc dynamic var date: String = ""
     @objc dynamic var icon: Data? = nil
+    @objc dynamic var text:String = ""
 }
