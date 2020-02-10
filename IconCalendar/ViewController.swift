@@ -21,12 +21,24 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var dateIcon: UIImageView!
     
-        
+        //選択した日付を入れる空の変数
     var pickedDate = ""
     
+    //エラーメッセージ設定
+    //エラーアラート用の変数宣言
+    let alert = UIAlertController(title: "エラー", message: "日付が選択されていません。", preferredStyle: .alert)
+    
+    //Cancel 一つだけしか指定できない
+    let cancelAction:UIAlertAction = UIAlertAction(title: "キャンセル",
+                                                   style: UIAlertAction.Style.cancel,
+                handler:{
+                (action:UIAlertAction!) -> Void in
+                    print("キャンセル")
+    })
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // デリゲートの設定
         calendar.dataSource = self
         calendar.delegate = self
@@ -45,11 +57,16 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //barのcolor設定
         self.navigationController!.navigationBar.barTintColor = .systemYellow
         
-        //ボタン設定2種
+        //ボタン設定3種
         plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
         
+        //defaultのrealmデータファイル
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        //alertにキャンセル追加
+        alert.addAction(cancelAction)
         
     }
         
@@ -161,8 +178,9 @@ extension ViewController {
                 }
         }
         
-        
     }
+    
+    
     
     @objc func deleteBtn(_ sender: UIButton){
         let realm = try! Realm()
@@ -179,7 +197,12 @@ extension ViewController {
     }
     
     @objc func textAdd(_ sender: UIButton){
-        self.performSegue(withIdentifier: "toTextView", sender: AnyObject?.self)
+        if pickedDate == "" {
+            present(alert, animated: true, completion: nil)
+        }else{
+            self.performSegue(withIdentifier: "toTextView", sender: AnyObject?.self)
+        }
+        
     }
     
     @objc func addEvents(_ sender: UIButton) {

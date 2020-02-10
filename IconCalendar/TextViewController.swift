@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TextViewController: UIViewController {
+class TextViewController: UIViewController, UITextFieldDelegate {
     var pickedDate = ""
     
     var wroteText = ""
@@ -18,9 +18,19 @@ class TextViewController: UIViewController {
     
     @IBOutlet weak var cancelBtn: UIButton!
     
+    @IBOutlet weak var titleText: UITextField!
+    
+    @IBOutlet weak var placeText: UITextField!
+    
+    
     override func viewDidLoad() {
         //iOSのモードをライトに
         self.overrideUserInterfaceStyle = .light
+        
+        
+        //TextFieldのdelegateプロパティにself（UIViewController）を指定します。
+        titleText.delegate = self
+        placeText.delegate = self
         
         //ボタン設定
         cancelBtn!.addTarget(self, action: #selector(cancelEvent(_:)), for: .touchUpInside)
@@ -35,6 +45,18 @@ class TextViewController: UIViewController {
 }
 
 extension TextViewController{
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        addBtn.isEnabled = true
+        wroteText = titleText.text!
+        
+        print(wroteText)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.view.endEditing(true)
+    }
     
     @objc func cancelEvent(_: UIButton){
         //前のページに戻る
