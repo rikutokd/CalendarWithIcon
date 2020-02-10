@@ -148,35 +148,50 @@ extension ViewController {
         
         print(pickedDate)
         
-        //予定がある場合、イベントをDBから取得・表示する。
-        //無い場合、「イベントはありません」と表示。
-        dateText.text = "イベントはありません"
-        dateText.textColor = .lightGray
-        
-        //初期値で"nosign"imageセット
-        dateIcon.image = UIImage(systemName: "nosign")
-
         
         let da = f.string(from: date)
         
-        //スケジュール取得
         let realm = try! Realm()
         
-        var eventsDate = realm.objects(EventModel.self)
-        eventsDate = eventsDate.filter("date = '\(da)'")
-        print(eventsDate)
+        //全スケジュール取得
+        var allObjects = realm.objects(EventModel.self)
         
-        for gettingEvents in eventsDate {
-            if gettingEvents.date == da {
-                let eventIcon: UIImage = UIImage(data: gettingEvents.icon!)!
-                
-                dateText.text = ""
-                dateText.textColor = .clear
-                
-                dateIcon.image = eventIcon
-                
-                }
+        allObjects = allObjects.filter("date = '\(da)'")
+        
+        let iconIsEmpty = allObjects.filter("icon = nil").isEmpty
+        let textisEmpty = allObjects.filter("text = nil").isEmpty
+
+        if iconIsEmpty == true{
+            //初期値で"clear"imageセット
+            dateIcon.image = UIImage(systemName: "clear")
         }
+        
+        if textisEmpty == true{
+            dateText.text = "イベントはありません"
+            dateText.textColor = .lightGray
+        }
+        
+        
+        
+        
+        
+        
+        
+//        var eventsDate = realm.objects(EventModel.self)
+//        eventsDate = eventsDate.filter("date = '\(da)'")
+//        print(eventsDate)
+//
+//        for gettingEvents in eventsDate {
+//            if gettingEvents.date == da {
+//                let eventIcon: UIImage = UIImage(data: gettingEvents.icon!)!
+//
+//                dateText.text = ""
+//                dateText.textColor = .clear
+//
+//                dateIcon.image = eventIcon
+//
+//                }
+//        }
         
     }
     
@@ -206,8 +221,13 @@ extension ViewController {
     }
     
     @objc func addEvents(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toImageView", sender: AnyObject?.self)
+        if pickedDate == "" {
+            present(alert, animated: true, completion: nil)
+        }else{
+                    self.performSegue(withIdentifier: "toImageView", sender: AnyObject?.self)
+                }
     }
+        
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toImageView" {
