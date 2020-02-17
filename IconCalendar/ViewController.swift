@@ -15,8 +15,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     @IBOutlet weak var textBtn: UIButton!
     
     
-    
-    
     @IBOutlet weak var dateText: UILabel!
     
     @IBOutlet weak var dateIcon: UIImageView!
@@ -62,15 +60,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
         
-//        defaultのrealmデータファイル
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
         //alertにキャンセル追加
         alert.addAction(cancelAction)
         
-        //textの色初期設定
-        dateText.textColor = .black
-
         
     }
         

@@ -40,27 +40,26 @@ class TextViewController: UIViewController, UITextFieldDelegate {
         //追加ボタンを初期でdisable状態に
         addBtn.isEnabled = false
         
+        //テキスト設定
+        titleText.clearButtonMode = UITextField.ViewMode.whileEditing //編集時クリアボタン表示
+        titleText.keyboardType = UIKeyboardType.default //キーボードのタイプ:デフォルト
+        titleText.returnKeyType = UIReturnKeyType.done //完了ボタン
+
+        
     }
     
 }
 
 extension TextViewController{
-    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        addBtn.isEnabled = true
-//        wroteText = titleText.text!
-//
-//        print(wroteText)
-//        return true
-//    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addBtn.isEnabled = true
         wroteText = titleText.text!
         
         print(wroteText)
 
         self.view.endEditing(true)
+        return true
     }
     
     @objc func cancelEvent(_: UIButton){
