@@ -62,8 +62,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
         
-        //defaultのrealmデータファイル
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        defaultのrealmデータファイル
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         //alertにキャンセル追加
         alert.addAction(cancelAction)
@@ -157,41 +157,26 @@ extension ViewController {
         var allObjects = realm.objects(EventModel.self)
         
         allObjects = allObjects.filter("date = '\(da)'")
+        let oneObje = allObjects.first
+        let objcIcon = oneObje?.icon
+        let objcText =  oneObje?.text
         
-        let iconIsEmpty = allObjects.filter("icon = nil").isEmpty
-        let textisEmpty = allObjects.filter("text = nil").isEmpty
 
-        if iconIsEmpty == true{
-            //初期値で"clear"imageセット
+        if objcIcon == nil{
             dateIcon.image = UIImage(systemName: "clear")
+            dateIcon.tintColor = .gray
+        }else{
+            dateIcon.image = UIImage(data: objcIcon!)
         }
-        
-        if textisEmpty == true{
+
+        if objcText == nil{
             dateText.text = "イベントはありません"
-            dateText.textColor = .lightGray
+            dateText.textColor = .gray
+        }else{
+            dateText.tintColor = .black
+            dateText.text = objcText
         }
         
-        
-        
-        
-        
-        
-        
-//        var eventsDate = realm.objects(EventModel.self)
-//        eventsDate = eventsDate.filter("date = '\(da)'")
-//        print(eventsDate)
-//
-//        for gettingEvents in eventsDate {
-//            if gettingEvents.date == da {
-//                let eventIcon: UIImage = UIImage(data: gettingEvents.icon!)!
-//
-//                dateText.text = ""
-//                dateText.textColor = .clear
-//
-//                dateIcon.image = eventIcon
-//
-//                }
-//        }
         
     }
     

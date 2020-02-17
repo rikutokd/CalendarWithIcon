@@ -46,15 +46,20 @@ class TextViewController: UIViewController, UITextFieldDelegate {
 
 extension TextViewController{
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        addBtn.isEnabled = true
+//        wroteText = titleText.text!
+//
+//        print(wroteText)
+//        return true
+//    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
         addBtn.isEnabled = true
         wroteText = titleText.text!
         
         print(wroteText)
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
+
         self.view.endEditing(true)
     }
     

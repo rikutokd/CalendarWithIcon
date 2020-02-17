@@ -30,6 +30,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var selectedIconArray : [Data] = []
     
+    
     @IBOutlet weak var cancelBtn: UIButton!
     
     @IBOutlet weak var addBtn: UIButton!
@@ -106,7 +107,7 @@ extension ImageViewController {
         
         selectedImage = UIImage(named: photos[indexPath.row])
         
-        //選択されている画像出力
+        //選択されている画像
         print(selectedImage!)
         
         //選択画像をpngに変換
@@ -131,28 +132,53 @@ extension ImageViewController {
     
     @objc func trySave(_ : UIButton) {
         
+        let realm = try! Realm()
         
         print("DB書き込み開始")
         
+        //日付表示の内容とスケジュール入力の内容が書き込まれる。
+        let selectIcon = selectedIconArray.last!
+        let Events = [EventModel(value: ["date": pickedDate, "icon": selectIcon])]
+        let thisDate = realm.objects(EventModel.self).filter("date == '\(pickedDate)'").first
+        let icon = thisDate?.icon
         
-        let realm = try! Realm()
+        let event_Icon = EventModel()
+        event_Icon.icon = selectIcon
+        
+        print(thisDate as Any)
 
         try! realm.write {
-            //日付表示の内容とスケジュール入力の内容が書き込まれる。
-            let Events = [EventModel(value: ["date": pickedDate, "icon": selectedIconArray.first!])]
             
-                realm.add(Events)
-                print("DB書き込み中")
-
+            
+                if thisDate == nil {
+                
+                        realm.add(Events)
+                        print("DB書き込み中")
+                    
+                    //DBをその日付で見た時に、値がnilではない時に,
+                }else{
+                    
+                    if icon == nil {
+                        
+                        thisDate!.icon = selectIcon
+                        print("その日の日付に書き込み中")
+                        
+                    }else if icon != nil{
+                        
+                        thisDate!.icon = selectIcon
+                        print("画像を上書き中")
+                        
+                    }
+                    
                 }
         
-        print("データ書き込み完了")
-
-        //前のページに戻る
-        dismiss(animated: true, completion: nil)
+            print("データ書き込み完了")
+            //前のページに戻る
+            dismiss(animated: true, completion: nil)
         
-    }
+        }
 
     
-}
+    }
 
+}
