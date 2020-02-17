@@ -68,6 +68,10 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //alertにキャンセル追加
         alert.addAction(cancelAction)
         
+        //textの色初期設定
+        dateText.textColor = .black
+
+        
     }
         
     override func didReceiveMemoryWarning() {
@@ -173,8 +177,8 @@ extension ViewController {
             dateText.text = "イベントはありません"
             dateText.textColor = .gray
         }else{
-            dateText.tintColor = .black
             dateText.text = objcText
+            dateText.textColor = .black
         }
         
         
