@@ -34,6 +34,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
                     print("キャンセル")
     })
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,7 +61,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
         
-        
+        //alertにキャンセル追加
+        alert.addAction(cancelAction)
     }
         
     override func didReceiveMemoryWarning() {
@@ -131,14 +133,16 @@ extension ViewController {
     /// 画面再表示
        override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
-        //alertにキャンセル追加
-               alert.addAction(cancelAction)
-            
         
+        
+        print("reloadされました")
+        
+        //Realmの場所
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+
     }
     
-    
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         let f = DateFormatter()
         f.dateStyle = .long
@@ -146,11 +150,7 @@ extension ViewController {
         f.locale = Locale(identifier: "ja_JP")
         
         let strDate = f.string(from: date)
-        
-        self.pickedDate = strDate
-        
-        print(pickedDate)
-        
+        print(strDate)
         
         let da = f.string(from: date)
         
@@ -180,6 +180,50 @@ extension ViewController {
             dateText.textColor = .black
         }
         
+        
+    }
+    
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+        
+        let f = DateFormatter()
+        f.dateStyle = .long
+        f.timeStyle = .none
+        f.locale = Locale(identifier: "ja_JP")
+        
+        let strDate = f.string(from: date)
+        
+        self.pickedDate = strDate
+        
+        print(pickedDate)
+        
+        let da = f.string(from: date)
+        
+        let realm = try! Realm()
+        
+        //全スケジュール取得
+        var allObjects = realm.objects(EventModel.self)
+        
+        allObjects = allObjects.filter("date = '\(da)'")
+        let oneObje = allObjects.first
+        let objcIcon = oneObje?.icon
+        let objcText =  oneObje?.text
+        
+
+        if objcIcon == nil{
+            dateIcon.image = UIImage(systemName: "clear")
+            dateIcon.tintColor = .gray
+        }else{
+            dateIcon.image = UIImage(data: objcIcon!)
+        }
+
+        if objcText == nil{
+            dateText.text = "イベントはありません"
+            dateText.textColor = .gray
+        }else{
+            dateText.text = objcText
+            dateText.textColor = .black
+        }
         
     }
     
