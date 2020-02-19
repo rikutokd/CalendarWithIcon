@@ -60,9 +60,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
         
-        //alertにキャンセル追加
-        alert.addAction(cancelAction)
-        
         
     }
         
@@ -130,6 +127,18 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 }
 
 extension ViewController {
+    
+    /// 画面再表示
+       override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+        //alertにキャンセル追加
+               alert.addAction(cancelAction)
+               
+    
+        self.loadView()
+        self.viewDidLoad()
+    }
+    
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         
@@ -204,9 +213,9 @@ extension ViewController {
     @objc func addEvents(_ sender: UIButton) {
         if pickedDate == "" {
             present(alert, animated: true, completion: nil)
-        }else{
-                    self.performSegue(withIdentifier: "toImageView", sender: AnyObject?.self)
-                }
+    }else{
+                self.performSegue(withIdentifier: "toImageView", sender: AnyObject?.self)
+            }
     }
         
     

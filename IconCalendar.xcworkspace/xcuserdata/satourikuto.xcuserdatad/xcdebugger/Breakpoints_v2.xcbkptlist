@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "28328B9A-CADB-4388-A4B6-EB5C3A695071"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71752204-4A23-4EDF-8F41-5D96FF18BF45"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IconCalendar/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "71752204-4A23-4EDF-8F41-5D96FF18BF45 - 560060d7ea04b44"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; IconCalendar.TextViewController"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "71752204-4A23-4EDF-8F41-5D96FF18BF45 - a37a7bd85449950f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; IconCalendar.TextViewController"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  uuid = "71752204-4A23-4EDF-8F41-5D96FF18BF45 - 95a1399d747ac41b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IconCalendar.TextViewController&gt;"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "71752204-4A23-4EDF-8F41-5D96FF18BF45 - d97202f8ae197308"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IconCalendar.TextViewController&gt;"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  uuid = "71752204-4A23-4EDF-8F41-5D96FF18BF45 - b6b6d1073882c2b6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.__deallocating_deinit"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "086E0CA0-98C4-4E30-8B6E-4ED496A4CE67"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IconCalendar/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "086E0CA0-98C4-4E30-8B6E-4ED496A4CE67 - 270126ff1985d043"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.pickedDate.getter : Swift.String"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "086E0CA0-98C4-4E30-8B6E-4ED496A4CE67 - 26f95cd20f5731ab"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.pickedDate.setter : Swift.String"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "150">
+               </Location>
+               <Location
+                  uuid = "086E0CA0-98C4-4E30-8B6E-4ED496A4CE67 - 91096aa50da70849"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.pickedDate.modify : Swift.String"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "086E0CA0-98C4-4E30-8B6E-4ED496A4CE67 - 8bc8a71528a63a8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.pickedDate.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "086E0CA0-98C4-4E30-8B6E-4ED496A4CE67 - a37a7bd85449950f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; IconCalendar.TextViewController"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  uuid = "086E0CA0-98C4-4E30-8B6E-4ED496A4CE67 - d97202f8ae197308"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IconCalendar.TextViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IconCalendar.TextViewController&gt;"
+                  moduleName = "IconCalendar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satourikuto/MyProjects/IconCalendar/IconCalendar/IconCalendar/TextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "95">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "694865BE-CDFD-4492-8F98-8A6E5C33B72C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IconCalendar/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58C095B4-C04A-4F7F-88B3-346C24F1742F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IconCalendar/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

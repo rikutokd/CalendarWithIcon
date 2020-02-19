@@ -161,7 +161,7 @@ extension ImageViewController {
                     if icon == nil {
                         
                         thisDate!.icon = selectIcon
-                        print("その日の日付に書き込み中")
+                        print("その日付に書き込み中")
                         
                     }else if icon != nil{
                         
@@ -173,8 +173,10 @@ extension ImageViewController {
                 }
         
             print("データ書き込み完了")
+            
             //前のページに戻る
             dismiss(animated: true, completion: nil)
+            
         
         }
 
