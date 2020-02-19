@@ -176,7 +176,6 @@ extension ImageViewController {
             
             //前のページに戻る
             dismiss(animated: true, completion: nil)
-            
         
         }
 

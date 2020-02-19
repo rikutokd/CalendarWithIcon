@@ -133,12 +133,6 @@ extension ViewController {
     /// 画面再表示
        override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
-        
-        
-        print("reloadされました")
-        
-        //Realmの場所
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
 
     }
     
