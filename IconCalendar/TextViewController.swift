@@ -23,8 +23,6 @@ class TextViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleText: UITextField!
     
-    @IBOutlet weak var placeText: UITextField!
-    
     
     override func viewDidLoad() {
         //iOSのモードをライトに
@@ -33,7 +31,6 @@ class TextViewController: UIViewController, UITextFieldDelegate {
         
         //TextFieldのdelegateプロパティにself（UIViewController）を指定します。
         titleText.delegate = self
-        placeText.delegate = self
         
         //ボタン設定
         cancelBtn!.addTarget(self, action: #selector(cancelEvent(_:)), for: .touchUpInside)
