@@ -130,19 +130,12 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
 extension ViewController {
     
-    func doHoge(){
-        print("hoge")
-    }
-    
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         let f = DateFormatter()
         f.dateStyle = .long
         f.timeStyle = .none
         f.locale = Locale(identifier: "ja_JP")
-        
-        let strDate = f.string(from: date)
-        print(strDate)
         
         let da = f.string(from: date)
         
@@ -242,10 +235,13 @@ extension ViewController {
             present(alert, animated: true, completion: nil)
         }else{
             
-            //textViewに遷移
-        let nextVC  = self.storyboard?.instantiateViewController(identifier: "textView") as?                         TextViewController
-        nextVC!.pickedDate = self.pickedDate
-        self.present(nextVC!, animated: true, completion: nil)
+                //textViewに遷移
+            let nextVC  = self.storyboard?.instantiateViewController(identifier: "textView") as?                         TextViewController
+            nextVC!.pickedDate = self.pickedDate
+            self.present(nextVC!, animated: true, completion: nil)
+            
+            //帰ってくる時.nextVCにあるプロパティにクロージャを渡す
+            nextVC!.textViewCallBack = { self.callBack() }
         }
         
     }
@@ -270,7 +266,44 @@ extension ViewController {
     }
     
     func callBack(){
-        print("hogeeee")
+        //更新
+        let realm = try! Realm()
+        
+        let f = DateFormatter()
+               f.dateStyle = .long
+               f.timeStyle = .none
+               f.locale = Locale(identifier: "ja_JP")
+               
+               let da = pickedDate
+        
+                print(da)
+               
+               //全スケジュール取得
+               var allObjects = realm.objects(EventModel.self)
+               
+               allObjects = allObjects.filter("date = '\(da)'")
+               let oneObje = allObjects.first
+               let objcIcon = oneObje?.icon
+               let objcText =  oneObje?.text
+               
+
+               if objcIcon == nil{
+                   dateIcon.image = UIImage(systemName: "clear")
+                   dateIcon.tintColor = .gray
+               }else{
+                   dateIcon.image = UIImage(data: objcIcon!)
+               }
+
+               if objcText == nil{
+                   dateText.text = "イベントはありません"
+                   dateText.textColor = .gray
+               }else{
+                   dateText.text = objcText
+                   dateText.textColor = .black
+               }
+        
+        
+        
     }
             
 }

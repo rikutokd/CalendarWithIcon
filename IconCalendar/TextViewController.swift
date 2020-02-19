@@ -14,6 +14,9 @@ class TextViewController: UIViewController, UITextFieldDelegate {
     
     var wroteText = ""
     
+    //コールバックする時,引数無し
+    var textViewCallBack: (() -> Void)?
+    
     @IBOutlet weak var addBtn: UIButton!
     
     @IBOutlet weak var cancelBtn: UIButton!
@@ -64,31 +67,52 @@ extension TextViewController{
     
     @objc func cancelEvent(_: UIButton){
         //前のページに戻る
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func trySave(_ : UIButton) {
         
+        let realm = try! Realm()
         
         print("DB書き込み開始")
         
+        //日付表示の内容とスケジュール入力の内容が書き込まれる。
+        let Events = [EventModel(value: ["date": pickedDate, "text": wroteText])]
+        let thisDate = realm.objects(EventModel.self).filter("date == '\(pickedDate)'").first
+        let text = thisDate?.text
         
-        let realm = try! Realm()
-
         try! realm.write {
-            //日付表示の内容とスケジュール入力の内容が書き込まれる。
-            let Events = [EventModel(value: ["date": pickedDate, "text": wroteText])]
             
-                realm.add(Events)
-                print("DB書き込み中")
+            //その日付にデータが何も入っていない時
+            if thisDate == nil{
+                
+                                            realm.add(Events)
+                                            print("DB書き込み中")
 
-                }
-        
-        print("データ書き込み完了")
+                                            //DBをその日付で見た時に、値がnilではない時に,
+                                        }else{
+                                            
+                                                    //既に画像が入ってるかつテキストがない時
+                                                    if text == nil {
+                                                            thisDate!.text = wroteText
+                                                            print("元のデータにテキスト入力中")
+                                                            
+                                                            //既にその日にテキストが入っている時
+                                                        }else if text != nil {
+                                                                thisDate!.text = wroteText
+                                                                print("テキスト上書き中")
 
-        //前のページに戻る
-        self.dismiss(animated: true, completion: nil)
+                                                        }
+                                                }
         
-    }
+            print("データ書き込み完了")
+
+            //前のページに戻る
+            self.dismiss(animated: true, completion: {
+                self.textViewCallBack?()
+            })
+        
+        }
     
+    }
 }

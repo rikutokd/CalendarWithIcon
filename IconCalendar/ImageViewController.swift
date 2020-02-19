@@ -130,7 +130,7 @@ extension ImageViewController {
     
     @objc func cancelEvent(_: UIButton){
         //前のページに戻る
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func trySave(_ : UIButton) {
