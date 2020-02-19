@@ -105,7 +105,7 @@
         <!--Image View Controller-->
         <scene sceneID="3aB-rw-EIU">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="xcL-FG-lYe" customClass="ImageViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imageView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xcL-FG-lYe" customClass="ImageViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Na5-hJ-sIZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,7 +196,7 @@
         <!--Text View Controller-->
         <scene sceneID="44m-1d-Aec">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="jM0-aV-Buc" customClass="TextViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jM0-aV-Buc" customClass="TextViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYe-rp-Y39">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

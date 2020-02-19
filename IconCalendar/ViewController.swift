@@ -130,10 +130,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
 extension ViewController {
     
-    /// 画面再表示
-       override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-
+    func doHoge(){
+        print("hoge")
     }
     
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -238,35 +236,27 @@ extension ViewController {
     }
     
     @objc func textAdd(_ sender: UIButton){
+        
         if pickedDate == "" {
             present(alert, animated: true, completion: nil)
         }else{
-            self.performSegue(withIdentifier: "toTextView", sender: AnyObject?.self)
+        let nextVC  = self.storyboard?.instantiateViewController(identifier: "textView") as? TextViewController
+        nextVC!.pickedDate = self.pickedDate
+        self.present(nextVC!, animated: true, completion: nil)
         }
         
     }
     
     @objc func addEvents(_ sender: UIButton) {
+        
         if pickedDate == "" {
             present(alert, animated: true, completion: nil)
-    }else{
-                self.performSegue(withIdentifier: "toImageView", sender: AnyObject?.self)
-            }
-    }
-        
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toImageView" {
-            
-            let nextVC = segue.destination as! ImageViewController
-            nextVC.pickedDate = self.pickedDate
-            
-        } else if segue.identifier == "toTextView" {
-            
-            let nextVC = segue.destination as! TextViewController
-            nextVC.pickedDate = self.pickedDate
-            
+        }else{
+        let nextVC  = self.storyboard?.instantiateViewController(identifier: "imageView") as? ImageViewController
+        nextVC!.pickedDate = self.pickedDate
+        self.present(nextVC!, animated: true, completion: nil)
         }
+        
     }
             
 }
