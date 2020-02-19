@@ -63,6 +63,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
         //alertにキャンセル追加
         alert.addAction(cancelAction)
+        
+        //        defaultのrealmデータファイル
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
         
     override func didReceiveMemoryWarning() {
@@ -158,7 +161,7 @@ extension ViewController {
         }
 
         if objcText == nil{
-            dateText.text = "イベントはありません"
+            dateText.text = "イベント無し"
             dateText.textColor = .gray
         }else{
             dateText.text = objcText
@@ -203,7 +206,7 @@ extension ViewController {
         }
 
         if objcText == nil{
-            dateText.text = "イベントはありません"
+            dateText.text = "イベント無し"
             dateText.textColor = .gray
         }else{
             dateText.text = objcText
@@ -299,7 +302,7 @@ extension ViewController {
                }
 
                if objcText == nil{
-                   dateText.text = "イベントはありません"
+                   dateText.text = "イベント無し"
                    dateText.textColor = .gray
                }else{
                    dateText.text = objcText
