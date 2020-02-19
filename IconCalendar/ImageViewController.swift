@@ -30,7 +30,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var selectedIconArray : [Data] = []
     
-    //コールバックする時にdata型のpickedDateを引数で渡す
+    //コールバックする時,引数無し
     var imageViewCallBack: (() -> Void)?
     
     
