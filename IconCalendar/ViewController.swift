@@ -133,10 +133,8 @@ extension ViewController {
            super.viewWillAppear(animated)
         //alertにキャンセル追加
                alert.addAction(cancelAction)
-               
-    
-        self.loadView()
-        self.viewDidLoad()
+            
+        
     }
     
     
