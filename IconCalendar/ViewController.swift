@@ -237,10 +237,13 @@ extension ViewController {
     
     @objc func textAdd(_ sender: UIButton){
         
+        //日付が選択されていない時エラーアラート
         if pickedDate == "" {
             present(alert, animated: true, completion: nil)
         }else{
-        let nextVC  = self.storyboard?.instantiateViewController(identifier: "textView") as? TextViewController
+            
+            //textViewに遷移
+        let nextVC  = self.storyboard?.instantiateViewController(identifier: "textView") as?                         TextViewController
         nextVC!.pickedDate = self.pickedDate
         self.present(nextVC!, animated: true, completion: nil)
         }
@@ -249,14 +252,25 @@ extension ViewController {
     
     @objc func addEvents(_ sender: UIButton) {
         
+        //日付が選択されていない時エラーアラート
         if pickedDate == "" {
             present(alert, animated: true, completion: nil)
         }else{
-        let nextVC  = self.storyboard?.instantiateViewController(identifier: "imageView") as? ImageViewController
-        nextVC!.pickedDate = self.pickedDate
-        self.present(nextVC!, animated: true, completion: nil)
-        }
+            
+                // imageViewに遷移
+                let nextVC  = self.storyboard?.instantiateViewController(identifier: "imageView") as? ImageViewController
+            
+                //childVCにあるプロパティにクロージャを渡す
+            nextVC!.imageViewCallBack = { self.callBack() }
+            
+                nextVC!.pickedDate = self.pickedDate
+                self.present(nextVC!, animated: true, completion: nil)
+                }
         
+    }
+    
+    func callBack(){
+        print("hogeeee")
     }
             
 }

@@ -87,7 +87,7 @@ extension TextViewController{
         print("データ書き込み完了")
 
         //前のページに戻る
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     

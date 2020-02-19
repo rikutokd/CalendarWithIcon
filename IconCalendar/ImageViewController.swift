@@ -30,6 +30,9 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var selectedIconArray : [Data] = []
     
+    //コールバックする時にdata型のpickedDateを引数で渡す
+    var imageViewCallBack: (() -> Void)?
+    
     
     @IBOutlet weak var cancelBtn: UIButton!
     
@@ -175,7 +178,9 @@ extension ImageViewController {
             print("データ書き込み完了")
             //前のページに戻る
             
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: {
+                self.imageViewCallBack?()
+            })
         
         }
 
