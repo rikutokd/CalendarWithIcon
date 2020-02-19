@@ -226,6 +226,10 @@ extension ViewController {
         
         print("削除完了")
         
+        callBack()
+        
+        print("更新完了")
+        
     }
     
     @objc func textAdd(_ sender: UIButton){
