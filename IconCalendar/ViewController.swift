@@ -256,15 +256,15 @@ extension ViewController {
         if pickedDate == "" {
             present(alert, animated: true, completion: nil)
         }else{
-            
-                // imageViewに遷移
                 let nextVC  = self.storyboard?.instantiateViewController(identifier: "imageView") as? ImageViewController
             
-                //childVCにあるプロパティにクロージャを渡す
-            nextVC!.imageViewCallBack = { self.callBack() }
-            
+                //行く時.値渡し
                 nextVC!.pickedDate = self.pickedDate
                 self.present(nextVC!, animated: true, completion: nil)
+            
+                //帰ってくる時.nextVCにあるプロパティにクロージャを渡す
+                nextVC!.imageViewCallBack = { self.callBack() }
+            
                 }
         
     }
