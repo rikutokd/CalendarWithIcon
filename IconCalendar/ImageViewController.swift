@@ -66,7 +66,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -103,6 +103,15 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
 
 extension ImageViewController {
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let imageSection = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+
+        return imageSection
+        
+    }
+    
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
         var selectedImage : UIImage?
