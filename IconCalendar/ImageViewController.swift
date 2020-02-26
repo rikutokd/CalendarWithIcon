@@ -34,12 +34,20 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     var imageViewCallBack: (() -> Void)?
     
     
+    @IBOutlet weak var collectionview: UICollectionView!
+    
     @IBOutlet weak var cancelBtn: UIButton!
     
     @IBOutlet weak var addBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
+        collectionview.delegate = self
+        collectionview.dataSource = self
+        
+        
         
         //iOSのモードをライトに
         self.overrideUserInterfaceStyle = .light
@@ -104,11 +112,13 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 extension ImageViewController {
     
+    
+    //header設定
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let imageSection = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
-
-        return imageSection
+        let myHeader = collectionview.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+        
+        return myHeader
         
     }
     

@@ -139,21 +139,9 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="8rx-E2-AHZ" customClass="SectionHeader" customModule="IconCalendar" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="PSj-gl-RiB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCH-qd-Hy1">
-                                            <rect key="frame" x="53" y="0.0" width="199" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <connections>
-                                        <outlet property="sectionLabel" destination="RCH-qd-Hy1" id="IhO-Wx-lDB"/>
-                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="xcL-FG-lYe" id="BnB-sl-ohv"/>
@@ -199,6 +187,7 @@
                     <connections>
                         <outlet property="addBtn" destination="WGC-jw-2YJ" id="6Ae-bJ-6Xl"/>
                         <outlet property="cancelBtn" destination="pax-b0-qCq" id="2h5-vO-d52"/>
+                        <outlet property="collectionview" destination="Jc4-Uv-QTL" id="Eed-bU-IwD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ul0-Es-cEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
