@@ -39,19 +39,18 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var cancelBtn: UIButton!
     
     @IBOutlet weak var addBtn: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
+     //collectionview設定
         collectionview.delegate = self
         collectionview.dataSource = self
         
-        
+        collectionview.register(imageViewHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         
         //iOSのモードをライトに
         self.overrideUserInterfaceStyle = .light
-        
         
         //ボタン設定2種
         cancelBtn!.addTarget(self, action: #selector(cancelEvent(_:)), for: .touchUpInside)
@@ -116,9 +115,9 @@ extension ImageViewController {
     //header設定
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let myHeader = collectionview.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
-        
-        return myHeader
+        let reusableview = UICollectionReusableView()
+
+        return reusableview
         
     }
     

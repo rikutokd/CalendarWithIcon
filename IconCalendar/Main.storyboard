@@ -139,9 +139,21 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="PSj-gl-RiB">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="PSj-gl-RiB" customClass="imageViewHeaderCell" customModule="IconCalendar" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZF-4g-Txf">
+                                            <rect key="frame" x="70" y="0.0" width="126" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="headerCell" destination="8ZF-4g-Txf" id="xdj-ob-aED"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="xcL-FG-lYe" id="BnB-sl-ohv"/>
