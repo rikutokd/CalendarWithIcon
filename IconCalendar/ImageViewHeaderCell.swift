@@ -11,5 +11,13 @@ import UIKit
 
 class imageViewHeaderCell: UICollectionReusableView {
     
-    @IBOutlet weak var headerCell: UILabel!
+    @IBOutlet weak var headerTitleLabel: UILabel!
+    
+    var headerTitle: String! {
+        didSet{
+            headerTitleLabel.text = headerTitle
+        }
+    }
+
+    
 }

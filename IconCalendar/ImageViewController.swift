@@ -47,7 +47,6 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         collectionview.delegate = self
         collectionview.dataSource = self
         
-        collectionview.register(imageViewHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         
         //iOSのモードをライトに
         self.overrideUserInterfaceStyle = .light
@@ -65,15 +64,15 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     //cellの横幅、高さ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
-        let height: CGFloat = 256
-        let width: CGFloat = 256
+        let height: CGFloat = 128
+        let width: CGFloat = 128
         
         return CGSize(width: width, height: height)
         
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,15 +110,16 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 extension ImageViewController {
     
-    
     //header設定
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let reusableview = UICollectionReusableView()
-
-        return reusableview
+        let headerSection = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "imageViewHeaderCell", for: indexPath) as! imageViewHeaderCell
         
-    }
+        headerSection.headerTitle = "\(indexPath)"
+        
+        return headerSection
+        
+        }
     
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
