@@ -64,12 +64,12 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     //cellの横幅、高さ設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
-        let height: CGFloat = 128
-        let width: CGFloat = 128
-        
-        return CGSize(width: width, height: height)
+         let width: CGFloat = 50
+           let height: CGFloat = width
+           return CGSize(width: width, height: height)
         
     }
+    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
@@ -83,6 +83,10 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) // 表示するセルを登録(先程命名した"Cell")
         // Tag番号を使ってインスタンスをつくる
                 let photoImageView = cell.contentView.viewWithTag(1)  as! UIImageView
+                let viewSize:CGFloat = view.frame.size.width/3-2
+
+                photoImageView.frame = CGRect(x: 0, y: 0, width: viewSize, height: viewSize)
+        
                 let photoImage = UIImage(named: photos[indexPath.row])
                photoImageView.image = photoImage
                         
@@ -94,16 +98,21 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         return cell
     }
     
+
+    // 水平方向におけるセル間のマージン
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-                return CGFloat(0)
+                // セルの左右に
+                return 0
         }
     
+    // 垂直方向におけるセル間のマージン
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-                return CGFloat(0)
+                return 20
             }
     
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets.zero
+            //外枠のマージン(top , left , bottom , right)
+            return UIEdgeInsets(top: 20 , left: 2 , bottom: 20 , right: 2 )
             }
     
     }
