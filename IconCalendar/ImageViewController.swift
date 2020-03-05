@@ -1,6 +1,57 @@
 import UIKit
 import RealmSwift
 
+private let job = [
+"icons8-googleグループ-100"
+,"icons8-paycheque-100"
+,"icons8-イベント承認-100"
+,"icons8-カスタマー-サポート-100"
+,"icons8-クラウド-100"
+,"icons8-クラウドファンディング-100"
+,"icons8-クラウドへのアップロード-100"
+,"icons8-クレジット-コントロール-100"
+,"icons8-コミュニケーション-100"
+,"icons8-コミュニケーションスキル-100"
+,"icons8-コメント-100"
+,"icons8-コラボレーション-100"
+,"icons8-スカイプ-100"
+,"icons8-チケットを渡す-100"
+,"icons8-チャット-100"
+,"icons8-ビデオ会議-100"
+,"icons8-ビデオ通話-100"
+,"icons8-ビデオ編集-100"
+,"icons8-プレゼン-100"
+,"icons8-ボックス-100"
+,"icons8-マイトピック-100"
+,"icons8-マッチング求人を探す-100"
+,"icons8-メッセージを読む-100"
+,"icons8-ユーザー-グループの男-100"
+,"icons8-ユーザーグループ-100"
+,"icons8-会議-100"
+,"icons8-会計-100"
+,"icons8-会社-100"
+,"icons8-空港-100"
+,"icons8-群衆-100"
+,"icons8-契約-100"
+,"icons8-作業-100"
+,"icons8-時間とともに-100"
+,"icons8-社員カード-100"
+,"icons8-取引先-100"
+,"icons8-署名-100"
+,"icons8-食事-100"
+,"icons8-新しい仕事-100"
+,"icons8-正社員の職-100"
+,"icons8-選挙-100"
+,"icons8-超高層ビル-100"
+,"icons8-電卓-100"
+,"icons8-電話会議-100"
+,"icons8-払い戻し-100"
+,"icons8-並列タスク-100"
+,"icons8-履歴書-100"
+,"icons8-領収書-100"
+,"icons8-話す男性-100"
+]
+
     private let Foods = [
         "Apple",
         "Asparagus",
@@ -197,9 +248,9 @@ private let Travel = [
 ,"Zipline"
 ]
 
-private let titles = ["食べ物","旅行"]
+private let titles = ["仕事,コミュニケーション","食べ物","旅行"]
 
-private let titleOfImages = ["Apple","EiffelTower"]
+private let titleOfImages = ["icons8-コミュニケーションスキル-100","icons8-食事-100","icons8-空港-100"]
 
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -249,16 +300,18 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
-        case 0://食べ物
+        case 0://job
+            return 48
+        case 1://食べ物
             return 126
         
-        case 1://旅行
+        case 2://旅行
             return 64
             
         default:
@@ -285,11 +338,14 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         
         switch (indexPath.section) {
-        case 0://食べ物
+        case 0://job
+            let photoImage = UIImage(named: job[indexPath.row])
+            photoImageView.image = photoImage
+        case 1://食べ物
             let photoImage = UIImage(named: Foods[indexPath.row])
             photoImageView.image = photoImage
             
-        case 1://旅行
+        case 2://旅行
             let photoImage = UIImage(named: Travel[indexPath.row])
             photoImageView.image = photoImage
         default:
@@ -341,8 +397,10 @@ extension ImageViewController {
         
         switch (indexPath.section) {
         case 0:
-            selectedImage = UIImage(named: Foods[indexPath.row])
+            selectedImage = UIImage(named: job[indexPath.row])
         case 1:
+            selectedImage = UIImage(named: Foods[indexPath.row])
+        case 2:
             selectedImage = UIImage(named: Travel[indexPath.row])
         default:
             print("section error")
