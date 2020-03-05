@@ -28,14 +28,16 @@
                                 </connections>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A51-41-4cK">
-                                <rect key="frame" x="16" y="418" width="192" height="191"/>
+                                <rect key="frame" x="0.0" y="400" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="E6V-kZ-Swg"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0a-oX-Saf">
-                                <rect key="frame" x="216" y="453" width="159" height="43"/>
+                                <rect key="frame" x="138" y="400" width="237" height="43"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="1sK-6s-sPF"/>
-                                    <constraint firstAttribute="width" constant="159" id="GyR-YB-O9Q"/>
+                                    <constraint firstAttribute="width" constant="237" id="FmR-3k-aUS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -44,16 +46,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="X0a-oX-Saf" firstAttribute="leading" secondItem="A51-41-4cK" secondAttribute="trailing" constant="8" id="1on-ne-sek"/>
+                            <constraint firstItem="X0a-oX-Saf" firstAttribute="trailing" secondItem="8yU-xz-Igu" secondAttribute="trailing" id="8vq-uh-TZt"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bhl-oP-bgd"/>
-                            <constraint firstItem="A51-41-4cK" firstAttribute="centerY" secondItem="X0a-oX-Saf" secondAttribute="centerY" constant="39" id="FAM-48-zBS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A51-41-4cK" secondAttribute="bottom" constant="137" id="Bvj-2k-Q4u"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OMl-gV-Bj0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A51-41-4cK" secondAttribute="bottom" constant="58" id="a6c-bE-1zc"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="beS-qT-CgZ"/>
-                            <constraint firstItem="A51-41-4cK" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="26" id="iGD-R2-UBK"/>
-                            <constraint firstItem="X0a-oX-Saf" firstAttribute="trailing" secondItem="8yU-xz-Igu" secondAttribute="trailing" id="psg-fL-Ke8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X0a-oX-Saf" secondAttribute="bottom" constant="171" id="qei-6F-phe"/>
-                            <constraint firstItem="A51-41-4cK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rhK-OX-OKO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A51-41-4cK" secondAttribute="trailing" constant="167" id="zpW-nx-AOz"/>
+                            <constraint firstItem="A51-41-4cK" firstAttribute="leading" secondItem="8yU-xz-Igu" secondAttribute="leading" id="fgM-3P-hnq"/>
+                            <constraint firstItem="X0a-oX-Saf" firstAttribute="top" secondItem="A51-41-4cK" secondAttribute="top" id="knx-SH-d2B"/>
+                            <constraint firstItem="A51-41-4cK" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="8" id="tTk-LD-huC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X0a-oX-Saf" secondAttribute="bottom" constant="224" id="xSo-wm-RH7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
