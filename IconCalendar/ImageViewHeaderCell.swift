@@ -13,11 +13,20 @@ class imageViewHeaderCell: UICollectionReusableView {
     
     @IBOutlet weak var headerTitleLabel: UILabel!
     
+    @IBOutlet weak var headerTitleImage: UIImageView!
+    
     var headerTitle: String! {
         didSet{
             headerTitleLabel.text = headerTitle
         }
     }
+    
+    var headerImage : UIImage! {
+        didSet{
+            headerTitleImage.image = headerImage
+        }
+    }
+    
 
     
 }

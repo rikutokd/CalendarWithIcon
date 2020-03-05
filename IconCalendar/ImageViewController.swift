@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-    private let Fruits = [
+    private let Foods = [
         "Apple",
         "Asparagus",
 "Avocado",
@@ -197,7 +197,7 @@ private let Travel = [
 ,"Zipline"
 ]
 
-private let titles = ["果物","旅行"]
+private let titles = ["食べ物","旅行"]
 
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -253,7 +253,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch section {
-        case 0://果物
+        case 0://食べ物
             return 126
         
         case 1://旅行
@@ -283,8 +283,8 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         
         switch (indexPath.section) {
-        case 0://果物
-            let photoImage = UIImage(named: Fruits[indexPath.row])
+        case 0://食べ物
+            let photoImage = UIImage(named: Foods[indexPath.row])
             photoImageView.image = photoImage
             
         case 1://旅行
@@ -325,6 +325,8 @@ extension ImageViewController {
     
         headerSection.headerTitle = titles[indexPath.section]
         
+        headerSection.headerImage = UIImage(named: "Apple")!
+        
         
         return headerSection
         
@@ -337,7 +339,7 @@ extension ImageViewController {
         
         switch (indexPath.section) {
         case 0:
-            selectedImage = UIImage(named: Fruits[indexPath.row])
+            selectedImage = UIImage(named: Foods[indexPath.row])
         case 1:
             selectedImage = UIImage(named: Travel[indexPath.row])
         default:
