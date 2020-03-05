@@ -197,6 +197,8 @@ private let Travel = [
 ,"Zipline"
 ]
 
+private let titles = ["果物","旅行"]
+
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     var pickedDate = ""
@@ -232,9 +234,6 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         //追加ボタンを初期でdisable状態に
         addBtn.isEnabled = false
         
-       print(Fruits[0])
-        print(Fruits[125])
-
         
     }
     
@@ -249,7 +248,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -325,7 +324,7 @@ extension ImageViewController {
         
         let headerSection = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "imageViewHeaderCell", for: indexPath) as! imageViewHeaderCell
         
-        headerSection.headerTitle = "\(indexPath)"
+        headerSection.headerTitle = titles[indexPath.row]
         
         return headerSection
         
@@ -336,8 +335,14 @@ extension ImageViewController {
         var selectedImage : UIImage?
         var pngSelectedIcon : Data?
         
-        selectedImage = UIImage(named: Fruits[indexPath.row])
-        
+        switch (indexPath.section) {
+        case 0:
+            selectedImage = UIImage(named: Fruits[indexPath.row])
+        case 1:
+            selectedImage = UIImage(named: Travel[indexPath.row])
+        default:
+            print("section error")
+        }
         //選択されている画像
         print(selectedImage!)
         
