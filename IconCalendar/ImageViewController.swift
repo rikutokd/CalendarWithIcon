@@ -234,7 +234,6 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         //追加ボタンを初期でdisable状態に
         addBtn.isEnabled = false
         
-        
     }
     
     //cellの横幅、高さ設定
@@ -323,8 +322,9 @@ extension ImageViewController {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let headerSection = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "imageViewHeaderCell", for: indexPath) as! imageViewHeaderCell
+    
+        headerSection.headerTitle = titles[indexPath.section]
         
-        headerSection.headerTitle = titles[indexPath.row]
         
         return headerSection
         
