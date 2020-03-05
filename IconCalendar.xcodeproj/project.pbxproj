@@ -17,6 +17,7 @@
 		2637D29F23F3D7C4005B05CB /* Pods_IconCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB7DFD9178407EB02CBC37 /* Pods_IconCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654C47C23CF0AA20017672A /* ImageViewController.swift */; };
 		267E6DC023D22510003963BB /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E6DBF23D22510003963BB /* EventModel.swift */; };
+		26A61C7724106971002842A8 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A61C7624106971002842A8 /* PhotosModel.swift */; };
 		26D3DEA92406914A004D0886 /* ImageViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */; };
 		26D8C21C23F3E4B6008A1B1B /* Pods_IconCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB7DFD9178407EB02CBC37 /* Pods_IconCalendar.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		2637D29923F3D7C4005B05CB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2654C47C23CF0AA20017672A /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		267E6DBF23D22510003963BB /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		26A61C7624106971002842A8 /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewHeaderCell.swift; sourceTree = "<group>"; };
 		26D8C21123F3E484008A1B1B /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D8C21423F3E4B6008A1B1B /* CalculateCalendarLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CalculateCalendarLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 				262AACA823CE0337001AB3DE /* Info.plist */,
 				267E6DBF23D22510003963BB /* EventModel.swift */,
 				26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */,
+				26A61C7624106971002842A8 /* PhotosModel.swift */,
 			);
 			path = IconCalendar;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			files = (
 				26D3DEA92406914A004D0886 /* ImageViewHeaderCell.swift in Sources */,
 				262AAC9F23CE0336001AB3DE /* ViewController.swift in Sources */,
+				26A61C7724106971002842A8 /* PhotosModel.swift in Sources */,
 				262AAC9B23CE0336001AB3DE /* AppDelegate.swift in Sources */,
 				2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */,
 				267E6DC023D22510003963BB /* EventModel.swift in Sources */,

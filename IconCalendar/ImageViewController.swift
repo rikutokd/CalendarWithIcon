@@ -1,29 +1,202 @@
 import UIKit
 import RealmSwift
 
-    private let photos = [
-"Coffee01",
-"Coffee02",
-"Computer",
-"Desk",
-"Diary",
-"Grass",
-"Lamp",
-"Mail",
-"Mouse",
-"Music",
-"PencilStand",
-"PenTab",
-"Picture",
-"Prize",
-"Radio",
-"Timer",
-"USB",
-"Workspace",
-"video-recorder",
+    private let Fruits = [
+        "Apple",
+        "Asparagus",
+"Avocado",
+"Baby Bottle",
+"Bacon",
+"Banana Split",
+"Banana",
+"Bar",
+"Bavarian Beer Mug",
+"Bavarian Pretzel"
+,"Bavarian Wheat Beer"
+,"Beer Bottle"
+,"Beer Can"
+,"Beer"
+,"Beet"
+,"Birthday Cake"
+,"Bottle of Water"
+,"Bread"
+,"Broccoli"
+,"Cabbage"
+,"Cafe"
+,"Carrot"
+,"Celery"
+,"Cheese"
+,"Cherry"
+,"Chili Pepper"
+,"Cinnamon Roll"
+,"Citrus"
+,"Cocktail"
+,"Coconut Cocktail"
+,"Coffee Pot"
+,"Coffee to Go"
+,"Cookies"
+,"Corn"
+,"Cotton Candy"
+,"Crab"
+,"Cucumber"
+,"Cup"
+,"Cupcake"
+,"Dim Sum"
+,"Dolmades"
+,"Doughnut"
+,"Dragon Fruit"
+,"Durian"
+,"Eggplant"
+,"Eggs"
+,"Espresso Cup"
+,"Fish Food"
+,"Food And Wine"
+,"French Fries"
+,"French Press"
+,"Garlic"
+,"Grapes"
+,"Hamburger"
+,"Hazelnut"
+,"Honey"
+,"Hops"
+,"Hot Chocolate"
+,"Hot Dog"
+,"Ice Cream Cone"
+,"Ingredients"
+,"Kebab"
+,"Kiwi"
+,"Kohlrabi"
+,"Leek"
+,"Lettuce"
+,"Macaron"
+,"Melon"
+,"Milk"
+,"Nachos"
+,"Natural Food"
+,"Noodles"
+,"Nut"
+,"Octopus"
+,"Olive Oil"
+,"Olive"
+,"Onion"
+,"Organic Food"
+,"Pancake"
+,"Paprika"
+,"Pastry Bag"
+,"Peach"
+,"Peanuts"
+,"Pear"
+,"Peas"
+,"Pepper Shaker"
+,"Pie"
+,"Pineapple"
+,"Pizza"
+,"Plum"
+,"Pomegranate"
+,"Porridge"
+,"Potato"
+,"Prawn"
+,"Pretzel"
+,"Quesadilla"
+,"Rack of Lamb"
+,"Radish"
+,"Raspberry"
+,"Rice Bowl"
+,"Sack of Flour"
+,"Salt Shaker"
+,"Sauce"
+,"Sesame"
+,"Spaghetti"
+,"Spoon of Sugar"
+,"Steak"
+,"Strawberry"
+,"Sugar Cube"
+,"Sugar"
+,"Sushi"
+,"Sweet Potato"
+,"Taco"
+,"Tapas"
+,"Tea Cup"
+,"Tea"
+,"Teapot"
+,"Thanksgiving"
+,"Tin Can"
+,"Tomato"
+,"Vegan Food"
+,"Vegan Symbol"
+,"Watermelon"
+,"Wine Bottle"
+,"Wine Glass"
+,"Wrap"
 ]
 
-    
+private let Travel = [
+"3StarHotel"
+,"4StarHotel"
+,"AirplaneFrontView"
+,"Archeology"
+,"BaggageLockers"
+,"BeachBall"
+,"BeachUmbrella"
+,"Beach"
+,"BigBen"
+,"Bust"
+,"CableCar"
+,"Campfire"
+,"CampingTent"
+,"CoconutCocktail"
+,"Colosseum"
+,"CruiseShip"
+,"CustomsOfficer"
+,"Customs"
+,"EiffelTower"
+,"EntranceVisa"
+,"EquestrianStatue"
+,"Ferry"
+,"FlipFlops"
+,"Flippers"
+,"HotAirBalloon"
+,"HotSprings"
+,"HotelInformation"
+,"LionStatue"
+,"MapMarker"
+,"MaskSnorkel"
+,"ModernStatue"
+,"Monument"
+,"Museum"
+,"NoBaggage"
+,"NoScubaDiving"
+,"Obelisk"
+,"PalmTree"
+,"Passport"
+,"PointofInterest"
+,"RailroadCar"
+,"RVCampground"
+,"ScubaDiving"
+,"ScubaMask"
+,"SeaWaves"
+,"Signpost"
+,"SkiRental"
+,"StatueofLiberty"
+,"Statue"
+,"Suitcase"
+,"Summer"
+,"SunLounger"
+,"SwimRing"
+,"TajMahal"
+,"Taxi"
+,"TicketPurchase"
+,"Ticket"
+,"TourBus"
+,"TrainTicket"
+,"USCapitol"
+,"WalkingBridge"
+,"WineTour"
+,"WorldMap"
+,"WorldwideLocation"
+,"Zipline"
+]
+
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     var pickedDate = ""
@@ -58,7 +231,11 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         //追加ボタンを初期でdisable状態に
         addBtn.isEnabled = false
+        
+       print(Fruits[0])
+        print(Fruits[125])
 
+        
     }
     
     //cellの横幅、高さ設定
@@ -76,24 +253,48 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count // 表示するセルの数
+        
+        switch section {
+        case 0://果物
+            return 126
+        
+        case 1://旅行
+            return 64
+            
+        default:
+            print("error")
+            return 0
+        }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) // 表示するセルを登録(先程命名した"Cell")
+        
         // Tag番号を使ってインスタンスをつくる
                 let photoImageView = cell.contentView.viewWithTag(1)  as! UIImageView
                 let viewSize:CGFloat = view.frame.size.width/3-2
 
                 photoImageView.frame = CGRect(x: 0, y: 0, width: viewSize, height: viewSize)
-        
-                let photoImage = UIImage(named: photos[indexPath.row])
-               photoImageView.image = photoImage
                         
         //選択されてハイライトされる
         let selectedImageView = UIView(frame: cell.frame)
         selectedImageView.backgroundColor = .lightGray
         cell.selectedBackgroundView = selectedImageView
+        
+        
+        switch (indexPath.section) {
+        case 0://果物
+            let photoImage = UIImage(named: Fruits[indexPath.row])
+            photoImageView.image = photoImage
+            
+        case 1://旅行
+            let photoImage = UIImage(named: Travel[indexPath.row])
+            photoImageView.image = photoImage
+        default:
+            print("section error")
+        }
         
         return cell
     }
@@ -135,7 +336,7 @@ extension ImageViewController {
         var selectedImage : UIImage?
         var pngSelectedIcon : Data?
         
-        selectedImage = UIImage(named: photos[indexPath.row])
+        selectedImage = UIImage(named: Fruits[indexPath.row])
         
         //選択されている画像
         print(selectedImage!)
