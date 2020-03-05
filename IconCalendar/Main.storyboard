@@ -166,23 +166,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvD-kw-pRi">
-                                            <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                            <rect key="frame" x="8" y="0.0" width="47" height="50"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6w-La-jw8">
-                                            <rect key="frame" x="63" y="15" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6w-La-jw8">
+                                            <rect key="frame" x="63" y="15" width="70" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="o9x-2v-3fw"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="qvD-kw-pRi" firstAttribute="top" secondItem="PSj-gl-RiB" secondAttribute="topMargin" id="2Sv-BS-ix2"/>
-                                        <constraint firstItem="I6w-La-jw8" firstAttribute="leading" secondItem="qvD-kw-pRi" secondAttribute="trailing" constant="21" id="B18-Me-gFY"/>
-                                        <constraint firstItem="I6w-La-jw8" firstAttribute="centerY" secondItem="PSj-gl-RiB" secondAttribute="centerY" id="HY7-Yi-cse"/>
-                                        <constraint firstItem="I6w-La-jw8" firstAttribute="top" secondItem="PSj-gl-RiB" secondAttribute="topMargin" constant="7" id="LNJ-IY-Xvs"/>
-                                        <constraint firstItem="qvD-kw-pRi" firstAttribute="leading" secondItem="PSj-gl-RiB" secondAttribute="leadingMargin" id="nuo-vj-ltL"/>
-                                        <constraint firstItem="I6w-La-jw8" firstAttribute="leading" secondItem="PSj-gl-RiB" secondAttribute="leading" constant="63" id="qFM-Gz-Pfl"/>
-                                        <constraint firstItem="I6w-La-jw8" firstAttribute="centerY" secondItem="qvD-kw-pRi" secondAttribute="centerY" id="uEx-ak-XHb"/>
+                                        <constraint firstItem="I6w-La-jw8" firstAttribute="centerY" secondItem="PSj-gl-RiB" secondAttribute="centerY" id="OFv-yv-OPu"/>
+                                        <constraint firstItem="I6w-La-jw8" firstAttribute="leading" secondItem="PSj-gl-RiB" secondAttribute="leading" constant="63" id="OLL-2i-1mq"/>
+                                        <constraint firstItem="I6w-La-jw8" firstAttribute="centerY" secondItem="qvD-kw-pRi" secondAttribute="centerY" id="iOh-9R-gM9"/>
+                                        <constraint firstItem="qvD-kw-pRi" firstAttribute="leading" secondItem="PSj-gl-RiB" secondAttribute="leadingMargin" id="jnL-Lk-kOz"/>
+                                        <constraint firstItem="I6w-La-jw8" firstAttribute="leading" secondItem="qvD-kw-pRi" secondAttribute="trailing" constant="8" id="lXb-Un-oHO"/>
+                                        <constraint firstItem="qvD-kw-pRi" firstAttribute="top" secondItem="PSj-gl-RiB" secondAttribute="topMargin" constant="-8" id="uSE-22-xIg"/>
+                                        <constraint firstItem="I6w-La-jw8" firstAttribute="top" secondItem="PSj-gl-RiB" secondAttribute="topMargin" constant="7" id="xda-WL-XGp"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="headerTitleImage" destination="qvD-kw-pRi" id="uq3-5V-EHs"/>

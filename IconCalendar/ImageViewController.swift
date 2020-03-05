@@ -199,6 +199,8 @@ private let Travel = [
 
 private let titles = ["食べ物","旅行"]
 
+private let titleOfImages = ["Apple","EiffelTower"]
+
 class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     var pickedDate = ""
@@ -325,7 +327,7 @@ extension ImageViewController {
     
         headerSection.headerTitle = titles[indexPath.section]
         
-        headerSection.headerImage = UIImage(named: "Apple")!
+        headerSection.headerImage = UIImage(named: "\(titleOfImages[indexPath.section])")!
         
         
         return headerSection
