@@ -169,7 +169,6 @@ extension ViewController {
         allObjects = allObjects.filter("date = '\(da)'")
         let oneObje = allObjects.first
         let objcIcon = oneObje?.icon
-        let objcText =  oneObje?.text
         
 
         if objcIcon == nil{
@@ -292,7 +291,6 @@ extension ViewController {
                allObjects = allObjects.filter("date = '\(da)'")
                let oneObje = allObjects.first
                let objcIcon = oneObje?.icon
-               let objcText =  oneObje?.text
                
 
                if objcIcon == nil{
