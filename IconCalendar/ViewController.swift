@@ -4,12 +4,11 @@ import CalculateCalendarLogic
 import RealmSwift
 
 
-class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UITableViewDelegate, UITableViewDataSource{
+class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance,UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var calendar: FSCalendar!
     
     @IBOutlet weak var tableview: UITableView!
-    
     
     @IBOutlet weak var plusBtn: UIButton!
     
@@ -18,12 +17,13 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     @IBOutlet weak var textBtn: UIButton!
     
     
-    @IBOutlet weak var dateText: UILabel!
-    
     @IBOutlet weak var dateIcon: UIImageView!
     
         //選択した日付を入れる空の変数
     var pickedDate = ""
+    
+        //空の配列(TODO)
+    var toDoArray: [String] = []
     
     //エラーメッセージ設定
     //エラーアラート用の変数宣言
@@ -88,14 +88,14 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     //MARk--tableviewSettings
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           1
+        return toDoArray.count
        }
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel!.text = "hoge"
-        
+        cell.textLabel?.text = toDoArray[indexPath.row]
         return cell
        }
 
@@ -178,14 +178,6 @@ extension ViewController {
         }else{
             dateIcon.image = UIImage(data: objcIcon!)
         }
-
-        if objcText == nil{
-            dateText.text = "イベント無し"
-            dateText.textColor = .gray
-        }else{
-            dateText.text = objcText
-            dateText.textColor = .black
-        }
         
         
     }
@@ -214,22 +206,12 @@ extension ViewController {
         allObjects = allObjects.filter("date = '\(da)'")
         let oneObje = allObjects.first
         let objcIcon = oneObje?.icon
-        let objcText =  oneObje?.text
-        
 
         if objcIcon == nil{
             dateIcon.image = UIImage(systemName: "clear")
             dateIcon.tintColor = .gray
         }else{
             dateIcon.image = UIImage(data: objcIcon!)
-        }
-
-        if objcText == nil{
-            dateText.text = "イベント無し"
-            dateText.textColor = .gray
-        }else{
-            dateText.text = objcText
-            dateText.textColor = .black
         }
         
     }
@@ -319,16 +301,6 @@ extension ViewController {
                }else{
                    dateIcon.image = UIImage(data: objcIcon!)
                }
-
-               if objcText == nil{
-                   dateText.text = "イベント無し"
-                   dateText.textColor = .gray
-               }else{
-                   dateText.text = objcText
-                   dateText.textColor = .black
-               }
-        
-        
         
     }
             
