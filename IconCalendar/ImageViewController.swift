@@ -252,7 +252,8 @@ private let titles = ["仕事,コミュニケーション","食べ物","旅行"]
 
 private let titleOfImages = ["icons8-コミュニケーションスキル-100","icons8-食事-100","icons8-空港-100"]
 
-class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     
     var pickedDate = ""
     
@@ -263,6 +264,8 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     @IBOutlet weak var collectionview: UICollectionView!
+    
+    
     
     @IBOutlet weak var cancelBtn: UIButton!
     

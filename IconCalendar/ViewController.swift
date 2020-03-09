@@ -4,9 +4,12 @@ import CalculateCalendarLogic
 import RealmSwift
 
 
-class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
+class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var calendar: FSCalendar!
+    
+    @IBOutlet weak var tableview: UITableView!
+    
     
     @IBOutlet weak var plusBtn: UIButton!
     
@@ -42,6 +45,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         calendar.dataSource = self
         calendar.delegate = self
         
+        tableview.delegate = self
+        tableview.dataSource = self
+        
         calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
         calendar.calendarWeekdayView.weekdayLabels[1].text = "月"
         calendar.calendarWeekdayView.weekdayLabels[2].text = "火"
@@ -64,14 +70,14 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //alertにキャンセル追加
         alert.addAction(cancelAction)
         
-        //        defaultのrealmデータファイル
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
     fileprivate lazy var dateFormatter: DateFormatter = {
@@ -79,6 +85,19 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+    
+    //MARk--tableviewSettings
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           1
+       }
+       
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel!.text = "hoge"
+        
+        return cell
+       }
 
     // 祝日判定を行い結果を返すメソッド(True:祝日)
     func judgeHoliday(_ date : Date) -> Bool {
