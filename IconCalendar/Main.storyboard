@@ -27,32 +27,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qce-AN-lnh"/>
                                 </connections>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A51-41-4cK">
-                                <rect key="frame" x="0.0" y="400" width="125" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="0Kz-Wz-qAo"/>
-                                    <constraint firstAttribute="height" constant="125" id="b6t-Zu-gpL"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNW-bS-Grv">
-                                <rect key="frame" x="133" y="400" width="242" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNW-bS-Grv">
+                                <rect key="frame" x="174" y="400" width="201" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A51-41-4cK">
+                                <rect key="frame" x="16" y="400" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="uAb-kt-oWG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="MNW-bS-Grv" firstAttribute="leading" secondItem="A51-41-4cK" secondAttribute="trailing" constant="8" id="32M-DL-CIs"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bhl-oP-bgd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A51-41-4cK" secondAttribute="bottom" constant="142" id="KFD-q9-YR5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MNW-bS-Grv" secondAttribute="bottom" constant="226" id="M9R-XR-HMD"/>
+                            <constraint firstItem="MNW-bS-Grv" firstAttribute="top" secondItem="A51-41-4cK" secondAttribute="top" id="Chg-q6-dw7"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OMl-gV-Bj0"/>
-                            <constraint firstItem="A51-41-4cK" firstAttribute="leading" secondItem="8yU-xz-Igu" secondAttribute="leading" id="Spm-sY-rfm"/>
-                            <constraint firstItem="MNW-bS-Grv" firstAttribute="top" secondItem="A51-41-4cK" secondAttribute="top" id="Wog-y1-MVI"/>
+                            <constraint firstItem="MNW-bS-Grv" firstAttribute="leading" secondItem="A51-41-4cK" secondAttribute="trailing" constant="8" id="Oe1-ks-hFc"/>
                             <constraint firstItem="8yU-xz-Igu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="beS-qT-CgZ"/>
-                            <constraint firstItem="MNW-bS-Grv" firstAttribute="trailing" secondItem="8yU-xz-Igu" secondAttribute="trailing" id="fpq-Al-29n"/>
-                            <constraint firstItem="A51-41-4cK" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="8" id="pif-QZ-xvy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A51-41-4cK" secondAttribute="trailing" constant="209" id="eVf-Ho-VFk"/>
+                            <constraint firstItem="A51-41-4cK" firstAttribute="top" secondItem="8yU-xz-Igu" secondAttribute="bottom" constant="8" id="gU1-IV-9Eg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A51-41-4cK" secondAttribute="bottom" constant="117" id="kFa-50-HEO"/>
+                            <constraint firstItem="A51-41-4cK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="o1F-zF-nh7"/>
+                            <constraint firstItem="MNW-bS-Grv" firstAttribute="trailing" secondItem="8yU-xz-Igu" secondAttribute="trailing" id="xOC-iK-dR6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MNW-bS-Grv" secondAttribute="bottom" constant="225" id="xQl-f6-hTC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

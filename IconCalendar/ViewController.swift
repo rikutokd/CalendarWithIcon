@@ -27,6 +27,26 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     //エラーアラート用の変数宣言
     let alert = UIAlertController(title: "エラー", message: "日付が選択されていません。", preferredStyle: .alert)
     
+    let deleteAlert = UIAlertController(title: "警告", message: "予定を全て削除しますか？", preferredStyle: .alert)
+    
+    // OKボタン
+    let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler:{
+        // ボタンが押された時の処理を書く（クロージャ実装）
+        (action: UIAlertAction!) -> Void in 
+        print("OK")
+        
+                let realm = try! Realm()
+        
+                print("DBのデータを全て削除")
+        
+                // Delete all objects from the realm
+                try! realm.write {
+                    realm.deleteAll()
+                }
+        
+        
+    })
+    
     //Cancel 一つだけしか指定できない
     let cancelAction:UIAlertAction = UIAlertAction(title: "キャンセル",
                                                    style: UIAlertAction.Style.cancel,
@@ -64,6 +84,10 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
         //alertにキャンセル追加
         alert.addAction(cancelAction)
+        
+        //deleteAlert
+        deleteAlert.addAction(defaultAction)
+        deleteAlert.addAction(cancelAction)
         
     }
         
@@ -219,20 +243,8 @@ extension ViewController {
     
     
     @objc func deleteBtn(_ sender: UIButton){
-        let realm = try! Realm()
         
-        print("DBのデータを全て削除")
-        
-        // Delete all objects from the realm
-        try! realm.write {
-            realm.deleteAll()
-        }
-        
-        print("削除完了")
-        
-        callBack()
-        
-        print("更新完了")
+        present(deleteAlert,animated: true, completion: nil)
         
     }
     
