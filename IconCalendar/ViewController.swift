@@ -4,11 +4,9 @@ import CalculateCalendarLogic
 import RealmSwift
 
 
-class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance,UITableViewDelegate, UITableViewDataSource{
+class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
     
     @IBOutlet weak var calendar: FSCalendar!
-    
-    @IBOutlet weak var tableview: UITableView!
     
     @IBOutlet weak var plusBtn: UIButton!
     
@@ -19,11 +17,11 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var dateIcon: UIImageView!
     
+    @IBOutlet weak var tableText: UILabel!
+    
+    
         //選択した日付を入れる空の変数
     var pickedDate = ""
-    
-        //空の配列(TODO)
-    var toDoArray: [String] = []
     
     //エラーメッセージ設定
     //エラーアラート用の変数宣言
@@ -44,9 +42,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         // デリゲートの設定
         calendar.dataSource = self
         calendar.delegate = self
-        
-        tableview.delegate = self
-        tableview.dataSource = self
         
         calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
         calendar.calendarWeekdayView.weekdayLabels[1].text = "月"
@@ -86,18 +81,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         return formatter
     }()
     
-    //MARk--tableviewSettings
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoArray.count
-       }
-       
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = toDoArray[indexPath.row]
-        return cell
-       }
 
     // 祝日判定を行い結果を返すメソッド(True:祝日)
     func judgeHoliday(_ date : Date) -> Bool {
@@ -169,6 +152,7 @@ extension ViewController {
         allObjects = allObjects.filter("date = '\(da)'")
         let oneObje = allObjects.first
         let objcIcon = oneObje?.icon
+        let objcText  = oneObje?.text
         
 
         if objcIcon == nil{
@@ -176,6 +160,14 @@ extension ViewController {
             dateIcon.tintColor = .gray
         }else{
             dateIcon.image = UIImage(data: objcIcon!)
+        }
+        
+        if objcText == nil{
+            tableText.text = "イベントはありません"
+            tableText.textColor = .gray
+        }else{
+            tableText.text = objcText
+            tableText.textColor = .black
         }
         
         
@@ -205,12 +197,21 @@ extension ViewController {
         allObjects = allObjects.filter("date = '\(da)'")
         let oneObje = allObjects.first
         let objcIcon = oneObje?.icon
-
+        let objcText  = oneObje?.text
+        
         if objcIcon == nil{
             dateIcon.image = UIImage(systemName: "clear")
             dateIcon.tintColor = .gray
         }else{
             dateIcon.image = UIImage(data: objcIcon!)
+        }
+        
+        if objcText == nil{
+            tableText.text = "イベントはありません"
+            tableText.textColor = .gray
+        }else{
+            tableText.text = objcText
+            tableText.textColor = .black
         }
         
     }
@@ -291,6 +292,7 @@ extension ViewController {
                allObjects = allObjects.filter("date = '\(da)'")
                let oneObje = allObjects.first
                let objcIcon = oneObje?.icon
+                let objcText  = oneObje?.text
                
 
                if objcIcon == nil{
@@ -299,6 +301,14 @@ extension ViewController {
                }else{
                    dateIcon.image = UIImage(data: objcIcon!)
                }
+        
+        if objcText == nil{
+            tableText.text = "イベントはありません"
+            tableText.textColor = .gray
+        }else{
+            tableText.text = objcText
+            tableText.textColor = .black
+        }
         
     }
             
