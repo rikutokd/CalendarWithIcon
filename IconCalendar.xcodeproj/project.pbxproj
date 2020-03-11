@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,11 +14,10 @@
 		262AACA423CE0337001AB3DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262AACA323CE0337001AB3DE /* Assets.xcassets */; };
 		262AACA723CE0337001AB3DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262AACA523CE0337001AB3DE /* LaunchScreen.storyboard */; };
 		2631539723EAA4650074A151 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631539623EAA4650074A151 /* TextViewController.swift */; };
-		2637D29F23F3D7C4005B05CB /* Pods_IconCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB7DFD9178407EB02CBC37 /* Pods_IconCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2637D29F23F3D7C4005B05CB /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654C47C23CF0AA20017672A /* ImageViewController.swift */; };
 		267E6DC023D22510003963BB /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E6DBF23D22510003963BB /* EventModel.swift */; };
 		26D3DEA92406914A004D0886 /* ImageViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */; };
-		26D8C21C23F3E4B6008A1B1B /* Pods_IconCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB7DFD9178407EB02CBC37 /* Pods_IconCalendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2637D29F23F3D7C4005B05CB /* Pods_IconCalendar.framework in Embed Frameworks */,
+				2637D29F23F3D7C4005B05CB /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,13 +35,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		22BB7DFD9178407EB02CBC37 /* Pods_IconCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26165D9723EF557D00D888C0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		262700FB23F3DD4E0033D91D /* CalculateCalendarLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CalculateCalendarLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		262700FC23F3DD4E0033D91D /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		262700FD23F3DD4E0033D91D /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		262700FE23F3DD4E0033D91D /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		262AAC9723CE0336001AB3DE /* IconCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		262AAC9723CE0336001AB3DE /* iconcalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iconcalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		262AAC9A23CE0336001AB3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		262AAC9C23CE0336001AB3DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		262AAC9E23CE0336001AB3DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +68,6 @@
 		26D8C22623F3E515008A1B1B /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D8C22723F3E515008A1B1B /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D8C22823F3E515008A1B1B /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		927F26DE204E4EECF0B0B480 /* Pods-IconCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconCalendar.release.xcconfig"; path = "Target Support Files/Pods-IconCalendar/Pods-IconCalendar.release.xcconfig"; sourceTree = "<group>"; };
-		FA3DFD6BB52E409F4BA6766E /* Pods-IconCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconCalendar.debug.xcconfig"; path = "Target Support Files/Pods-IconCalendar/Pods-IconCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D8C21C23F3E4B6008A1B1B /* Pods_IconCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +84,6 @@
 		0CA1070C441F5FC1A38F8393 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FA3DFD6BB52E409F4BA6766E /* Pods-IconCalendar.debug.xcconfig */,
-				927F26DE204E4EECF0B0B480 /* Pods-IconCalendar.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -108,7 +101,7 @@
 		262AAC9823CE0336001AB3DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				262AAC9723CE0336001AB3DE /* IconCalendar.app */,
+				262AAC9723CE0336001AB3DE /* iconcalendar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,7 +148,6 @@
 				2637D29723F3D7C4005B05CB /* FSCalendar.framework */,
 				2637D29823F3D7C4005B05CB /* Realm.framework */,
 				2637D29923F3D7C4005B05CB /* RealmSwift.framework */,
-				22BB7DFD9178407EB02CBC37 /* Pods_IconCalendar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,24 +155,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		262AAC9623CE0336001AB3DE /* IconCalendar */ = {
+		262AAC9623CE0336001AB3DE /* iconcalendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "IconCalendar" */;
+			buildConfigurationList = 262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "iconcalendar" */;
 			buildPhases = (
-				EA824F3C0C4801E8760B8436 /* [CP] Check Pods Manifest.lock */,
 				262AAC9323CE0336001AB3DE /* Sources */,
 				262AAC9423CE0336001AB3DE /* Frameworks */,
 				262AAC9523CE0336001AB3DE /* Resources */,
-				A92115BB612364D82B791031 /* [CP] Embed Pods Frameworks */,
 				2637D2A423F3D7C4005B05CB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = IconCalendar;
+			name = iconcalendar;
 			productName = IconCalendar;
-			productReference = 262AAC9723CE0336001AB3DE /* IconCalendar.app */;
+			productReference = 262AAC9723CE0336001AB3DE /* iconcalendar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -198,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "IconCalendar" */;
+			buildConfigurationList = 262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "iconcalendar" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -211,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				262AAC9623CE0336001AB3DE /* IconCalendar */,
+				262AAC9623CE0336001AB3DE /* iconcalendar */,
 			);
 		};
 /* End PBXProject section */
@@ -228,48 +218,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A92115BB612364D82B791031 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IconCalendar/Pods-IconCalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IconCalendar/Pods-IconCalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IconCalendar/Pods-IconCalendar-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA824F3C0C4801E8760B8436 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IconCalendar-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		262AAC9323CE0336001AB3DE /* Sources */ = {
@@ -416,7 +364,6 @@
 		};
 		262AACAC23CE0337001AB3DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA3DFD6BB52E409F4BA6766E /* Pods-IconCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -429,7 +376,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.IconCalendar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iconcalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -437,7 +384,6 @@
 		};
 		262AACAD23CE0337001AB3DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 927F26DE204E4EECF0B0B480 /* Pods-IconCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,7 +396,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.IconCalendar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iconcalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -459,7 +405,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "IconCalendar" */ = {
+		262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "iconcalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				262AACA923CE0337001AB3DE /* Debug */,
@@ -468,7 +414,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "IconCalendar" */ = {
+		262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "iconcalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				262AACAC23CE0337001AB3DE /* Debug */,

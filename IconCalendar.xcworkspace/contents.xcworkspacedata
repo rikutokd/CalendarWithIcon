@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:IconCalendar.xcodeproj">
+      location = "group:/Users/satourikuto/MyProjects/IconCalendar/IconCalendar/iconcalendar.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

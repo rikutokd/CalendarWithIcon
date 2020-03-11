@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "262AAC9623CE0336001AB3DE"
-               BuildableName = "IconCalendar.app"
-               BlueprintName = "IconCalendar"
+               BuildableName = "iconcalendar.app"
+               BlueprintName = "iconcalendar"
                ReferencedContainer = "container:IconCalendar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262AAC9623CE0336001AB3DE"
-            BuildableName = "IconCalendar.app"
-            BlueprintName = "IconCalendar"
+            BuildableName = "iconcalendar.app"
+            BlueprintName = "iconcalendar"
             ReferencedContainer = "container:IconCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262AAC9623CE0336001AB3DE"
-            BuildableName = "IconCalendar.app"
-            BlueprintName = "IconCalendar"
+            BuildableName = "iconcalendar.app"
+            BlueprintName = "iconcalendar"
             ReferencedContainer = "container:IconCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
