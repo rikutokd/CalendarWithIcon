@@ -1,3 +1,11 @@
+//
+//  AppDelegate.swift
+//  IconCalendar
+//
+//  Created by 佐藤陸斗 on 2020/01/14.
+//  Copyright © 2020 hannet. All rights reserved.
+//
+
 import UIKit
 import FSCalendar
 import CalculateCalendarLogic
@@ -208,6 +216,7 @@ extension ViewController {
         
         self.pickedDate = strDate
         
+        //print(選択された日付)
         print(pickedDate)
         
         let da = f.string(from: date)

@@ -1,3 +1,11 @@
+//
+//  AppDelegate.swift
+//  IconCalendar
+//
+//  Created by 佐藤陸斗 on 2020/01/14.
+//  Copyright © 2020 hannet. All rights reserved.
+//
+
 import UIKit
 import RealmSwift
 
