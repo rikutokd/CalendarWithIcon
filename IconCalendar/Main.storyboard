@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p2U-me-rxJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p2U-me-rxJ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Data Source-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="iconcalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,9 +85,20 @@
                                     <segue destination="jM0-aV-Buc" kind="presentation" identifier="toTextView" id="WCM-fx-gih"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem style="done" id="bkh-u9-vdI">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mbI-Qd-DNo">
+                                    <rect key="frame" x="250" y="11" width="23" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="text.bubble.fill" catalog="system"/>
+                                </button>
+                                <connections>
+                                    <segue destination="oMa-iY-Ygb" kind="presentation" identifier="toScheduleView" id="Idb-l7-g59"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="ScheduleBtn" destination="bkh-u9-vdI" id="wzW-Vb-W76"/>
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
                         <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="deleteBtn" destination="0U2-zh-y51" id="Y7s-wi-gs5"/>
@@ -103,7 +114,7 @@
         <!--Image View Controller-->
         <scene sceneID="3aB-rw-EIU">
             <objects>
-                <viewController storyboardIdentifier="imageView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xcL-FG-lYe" customClass="ImageViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imageView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xcL-FG-lYe" customClass="ImageViewController" customModule="iconcalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Na5-hJ-sIZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +171,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="imageViewHeaderCell" id="PSj-gl-RiB" customClass="imageViewHeaderCell" customModule="IconCalendar" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="imageViewHeaderCell" id="PSj-gl-RiB" customClass="imageViewHeaderCell" customModule="iconcalendar" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -219,10 +230,25 @@
             </objects>
             <point key="canvasLocation" x="2956" y="474.51274362818594"/>
         </scene>
+        <!--ScheduleVC-->
+        <scene sceneID="1ZT-vH-Ozf">
+            <objects>
+                <viewController storyboardIdentifier="scheduleVIew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oMa-iY-Ygb" customClass="ScheduleVC" customModule="iconcalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1FH-4L-9tz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ChJ-L0-8rz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="diH-yM-NJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2017" y="-678"/>
+        </scene>
         <!--Text View Controller-->
         <scene sceneID="44m-1d-Aec">
             <objects>
-                <viewController storyboardIdentifier="textView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jM0-aV-Buc" customClass="TextViewController" customModule="IconCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jM0-aV-Buc" customClass="TextViewController" customModule="iconcalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYe-rp-Y39">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,8 +325,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="64" height="56"/>
-        <image name="text.bubble" catalog="system" width="64" height="54"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
+        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>

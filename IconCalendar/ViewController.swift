@@ -14,6 +14,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var textBtn: UIButton!
     
+    //スケジュール追加ボタン
+    @IBOutlet weak var ScheduleBtn: UIBarButtonItem!
+    
     
     @IBOutlet weak var dateIcon: UIImageView!
     
@@ -283,6 +286,23 @@ extension ViewController {
             
                 }
         
+    }
+    
+    //スケジュール追加ボタン機能追加
+    @objc func addShedule(_ sender: UIButton) {
+        //日付が選択されていない時エラーアラート
+        if pickedDate == "" {
+            present(alert, animated: true, completion: nil)
+        }else{
+            
+                //textViewに遷移
+            let nextVC  = self.storyboard?.instantiateViewController(identifier: "scheduleVIew") as?    ScheduleVC
+            nextVC!.pickedDate = self.pickedDate
+            self.present(nextVC!, animated: true, completion: nil)
+            
+            //帰ってくる時.nextVCにあるプロパティにクロージャを渡す
+//            nextVC!.textViewCallBack = { self.callBack() }
+        }
     }
     
     func callBack(){

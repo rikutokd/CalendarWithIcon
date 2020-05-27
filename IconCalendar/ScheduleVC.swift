@@ -8,4 +8,8 @@
 
 import XLForm
 
-
+class ScheduleVC: XLFormViewController{
+    
+    //前のVCで選択した日付を入れる為の変数
+    var pickedDate = "";
+}
