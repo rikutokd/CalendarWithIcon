@@ -86,17 +86,9 @@
                                     <segue destination="jM0-aV-Buc" kind="presentation" identifier="toTextView" id="WCM-fx-gih"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="Z3i-gw-HKw">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="poE-WJ-S3y">
-                                    <rect key="frame" x="250" y="11" width="23" height="22"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" image="text.bubble.fill" catalog="system"/>
-                                </button>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="ScheduleBtn" destination="poE-WJ-S3y" id="WqR-XT-7fb"/>
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
                         <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="deleteBtn" destination="0U2-zh-y51" id="Y7s-wi-gs5"/>
@@ -228,21 +220,6 @@
             </objects>
             <point key="canvasLocation" x="2956" y="474.51274362818594"/>
         </scene>
-        <!--ScheduleVC-->
-        <scene sceneID="1ZT-vH-Ozf">
-            <objects>
-                <viewController storyboardIdentifier="scheduleVIew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oMa-iY-Ygb" customClass="ScheduleVC" customModule="iconcalendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1FH-4L-9tz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ChJ-L0-8rz"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="diH-yM-NJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2017" y="-678"/>
-        </scene>
         <!--Text View Controller-->
         <scene sceneID="44m-1d-Aec">
             <objects>
@@ -325,7 +302,6 @@
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
-        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>
