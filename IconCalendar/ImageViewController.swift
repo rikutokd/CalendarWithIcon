@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  ImageViewController.swift
 //  IconCalendar
 //
 //  Created by 佐藤陸斗 on 2020/01/14.
