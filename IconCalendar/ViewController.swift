@@ -15,7 +15,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     @IBOutlet weak var textBtn: UIButton!
     
     //スケジュール追加ボタン
-    @IBOutlet weak var ScheduleBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var ScheduleBtn: UIButton!
     
     
     @IBOutlet weak var dateIcon: UIImageView!
@@ -80,10 +81,11 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //barのcolor設定
         self.navigationController!.navigationBar.barTintColor = .systemYellow
         
-        //ボタン設定3種
+        //ボタンに機能4種追加
         plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
+        ScheduleBtn!.addTarget(self, action: #selector(addShedule(_:)), for: .touchUpInside)
         
         //alertにキャンセル追加
         alert.addAction(cancelAction)

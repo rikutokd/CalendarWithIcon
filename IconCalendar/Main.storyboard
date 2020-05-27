@@ -57,6 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="8Gv-mE-0N6">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="done" id="wly-ip-Mnb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0U2-zh-y51">
                                 <rect key="frame" x="16" y="4.5" width="35" height="35"/>
@@ -85,20 +86,17 @@
                                     <segue destination="jM0-aV-Buc" kind="presentation" identifier="toTextView" id="WCM-fx-gih"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="done" id="bkh-u9-vdI">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mbI-Qd-DNo">
+                            <barButtonItem style="plain" id="Z3i-gw-HKw">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="poE-WJ-S3y">
                                     <rect key="frame" x="250" y="11" width="23" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="text.bubble.fill" catalog="system"/>
                                 </button>
-                                <connections>
-                                    <segue destination="oMa-iY-Ygb" kind="presentation" identifier="toScheduleView" id="Idb-l7-g59"/>
-                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="ScheduleBtn" destination="bkh-u9-vdI" id="wzW-Vb-W76"/>
+                        <outlet property="ScheduleBtn" destination="poE-WJ-S3y" id="WqR-XT-7fb"/>
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
                         <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="deleteBtn" destination="0U2-zh-y51" id="Y7s-wi-gs5"/>
@@ -235,7 +233,7 @@
             <objects>
                 <viewController storyboardIdentifier="scheduleVIew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oMa-iY-Ygb" customClass="ScheduleVC" customModule="iconcalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1FH-4L-9tz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ChJ-L0-8rz"/>
