@@ -14,11 +14,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var textBtn: UIButton!
     
-    //スケジュール追加ボタン
-    
-    @IBOutlet weak var ScheduleBtn: UIButton!
-    
-    
     @IBOutlet weak var dateIcon: UIImageView!
     
     @IBOutlet weak var tableText: UILabel!
@@ -81,11 +76,10 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //barのcolor設定
         self.navigationController!.navigationBar.barTintColor = .systemYellow
         
-        //ボタンに機能4種追加
+        //ボタンに機能3種追加
         plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
-        ScheduleBtn!.addTarget(self, action: #selector(addShedule(_:)), for: .touchUpInside)
         
         //alertにキャンセル追加
         alert.addAction(cancelAction)
@@ -289,24 +283,7 @@ extension ViewController {
                 }
         
     }
-    
-    //スケジュール追加ボタン機能追加
-    @objc func addShedule(_ sender: UIButton) {
-        //日付が選択されていない時エラーアラート
-        if pickedDate == "" {
-            present(alert, animated: true, completion: nil)
-        }else{
-            
-                //textViewに遷移
-            let nextVC  = self.storyboard?.instantiateViewController(identifier: "scheduleVIew") as?    ScheduleVC
-            nextVC!.pickedDate = self.pickedDate
-            self.present(nextVC!, animated: true, completion: nil)
-            
-            //帰ってくる時.nextVCにあるプロパティにクロージャを渡す
-//            nextVC!.textViewCallBack = { self.callBack() }
-        }
-    }
-    
+        
     func callBack(){
         //更新
         let realm = try! Realm()
