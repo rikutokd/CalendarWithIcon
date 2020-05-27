@@ -7,9 +7,8 @@ target 'iconcalendar' do
 
   # Pods for iconcalendar
 
-pod 'RealmSwift'
-  pod 'FSCalendar'
-  pod 'CalculateCalendarLogic'
-
-
+	pod 'RealmSwift'
+	pod 'FSCalendar'
+	pod 'CalculateCalendarLogic'
+	pod 'XLForm', '~> 4.1'
 end
