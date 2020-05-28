@@ -7,14 +7,46 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
-
+    //起動時に呼ばれる関数
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //ローンチ終わったら通知について聞く
+        let center = UNUserNotificationCenter.current()
+
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("通知が許可されました")
+            } else {
+                print("通知は拒否されました")
+            }
+        }
+        
+        //登録処理
+        let content = UNMutableNotificationContent()
+        //通知タイトル
+        content.title = "今日の予定";
+        //通知内容
+        content.body = "text";
+        //通知サウンド
+        content.sound = UNNotificationSound.default
+        
+        //通知トリガー設定
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)//5秒後
+        
+        //通知リクエスト設定
+        let request = UNNotificationRequest.init(identifier: "TestNotification", content: content, trigger: trigger)
+        
+        //通知リクエストを追加
+        center.add(request)
+        //デリゲート設定
+        center.delegate = self
+        
         return true
     }
 
