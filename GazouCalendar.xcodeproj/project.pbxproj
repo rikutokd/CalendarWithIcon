@@ -429,14 +429,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYY4LYP48K;
-				INFOPLIST_FILE = IconCalendar/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GazouCalendar/Info.plist";
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks/",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.gazouCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.GazouCalendar;
 				PRODUCT_NAME = GazouCalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -450,14 +450,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYY4LYP48K;
-				INFOPLIST_FILE = IconCalendar/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GazouCalendar/Info.plist";
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks/",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.gazouCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.GazouCalendar;
 				PRODUCT_NAME = GazouCalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
