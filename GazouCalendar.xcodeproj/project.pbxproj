@@ -16,9 +16,10 @@
 		2631539723EAA4650074A151 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631539623EAA4650074A151 /* TextViewController.swift */; };
 		2637D29F23F3D7C4005B05CB /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654C47C23CF0AA20017672A /* ImageViewController.swift */; };
+		2672A82D24809E6C00015293 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2672A82C24809E6C00015293 /* Default-568h@2x.png */; };
 		267E6DC023D22510003963BB /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E6DBF23D22510003963BB /* EventModel.swift */; };
 		26D3DEA92406914A004D0886 /* ImageViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */; };
-		D5F900091059F9F97FE21CF6 /* Pods_iconcalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A0D077DCE8153D08819560 /* Pods_iconcalendar.framework */; };
+		E8AD859AE7730E5D0DA607C7 /* Pods_GazouCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB606034E73765286500CC /* Pods_GazouCalendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,13 +37,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25A0D077DCE8153D08819560 /* Pods_iconcalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iconcalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CC1DEF5BE59FEE55E63BBD1 /* Pods-GazouCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GazouCalendar.debug.xcconfig"; path = "Target Support Files/Pods-GazouCalendar/Pods-GazouCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		1361A4F1CBB05CEC763986DF /* Pods-GazouCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GazouCalendar.release.xcconfig"; path = "Target Support Files/Pods-GazouCalendar/Pods-GazouCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		26165D9723EF557D00D888C0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		262700FB23F3DD4E0033D91D /* CalculateCalendarLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CalculateCalendarLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		262700FC23F3DD4E0033D91D /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		262700FD23F3DD4E0033D91D /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		262700FE23F3DD4E0033D91D /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		262AAC9723CE0336001AB3DE /* gazoucalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazoucalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		262AAC9723CE0336001AB3DE /* GazouCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GazouCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		262AAC9A23CE0336001AB3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		262AAC9C23CE0336001AB3DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		262AAC9E23CE0336001AB3DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 		2637D29823F3D7C4005B05CB /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637D29923F3D7C4005B05CB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2654C47C23CF0AA20017672A /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		2672A82C24809E6C00015293 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		267E6DBF23D22510003963BB /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewHeaderCell.swift; sourceTree = "<group>"; };
 		26D8C21123F3E484008A1B1B /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +75,7 @@
 		26D8C22823F3E515008A1B1B /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C60593B326E408D3B1E534 /* Pods-iconcalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconcalendar.debug.xcconfig"; path = "Target Support Files/Pods-iconcalendar/Pods-iconcalendar.debug.xcconfig"; sourceTree = "<group>"; };
 		CE7C2DFD8E4287725F4588FB /* Pods-iconcalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iconcalendar.release.xcconfig"; path = "Target Support Files/Pods-iconcalendar/Pods-iconcalendar.release.xcconfig"; sourceTree = "<group>"; };
+		EAEB606034E73765286500CC /* Pods_GazouCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GazouCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5F900091059F9F97FE21CF6 /* Pods_iconcalendar.framework in Frameworks */,
+				E8AD859AE7730E5D0DA607C7 /* Pods_GazouCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +95,8 @@
 			children = (
 				B1C60593B326E408D3B1E534 /* Pods-iconcalendar.debug.xcconfig */,
 				CE7C2DFD8E4287725F4588FB /* Pods-iconcalendar.release.xcconfig */,
+				0CC1DEF5BE59FEE55E63BBD1 /* Pods-GazouCalendar.debug.xcconfig */,
+				1361A4F1CBB05CEC763986DF /* Pods-GazouCalendar.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -98,7 +104,8 @@
 		262AAC8E23CE0336001AB3DE = {
 			isa = PBXGroup;
 			children = (
-				262AAC9923CE0336001AB3DE /* IconCalendar */,
+				2672A82C24809E6C00015293 /* Default-568h@2x.png */,
+				262AAC9923CE0336001AB3DE /* GazouCalendar */,
 				262AAC9823CE0336001AB3DE /* Products */,
 				0CA1070C441F5FC1A38F8393 /* Pods */,
 				63B8DF6440AE84D796A3D06C /* Frameworks */,
@@ -108,12 +115,12 @@
 		262AAC9823CE0336001AB3DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				262AAC9723CE0336001AB3DE /* gazoucalendar.app */,
+				262AAC9723CE0336001AB3DE /* GazouCalendar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		262AAC9923CE0336001AB3DE /* IconCalendar */ = {
+		262AAC9923CE0336001AB3DE /* GazouCalendar */ = {
 			isa = PBXGroup;
 			children = (
 				262AAC9A23CE0336001AB3DE /* AppDelegate.swift */,
@@ -128,7 +135,7 @@
 				267E6DBF23D22510003963BB /* EventModel.swift */,
 				26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */,
 			);
-			path = IconCalendar;
+			path = GazouCalendar;
 			sourceTree = "<group>";
 		};
 		63B8DF6440AE84D796A3D06C /* Frameworks */ = {
@@ -155,7 +162,7 @@
 				2637D29723F3D7C4005B05CB /* FSCalendar.framework */,
 				2637D29823F3D7C4005B05CB /* Realm.framework */,
 				2637D29923F3D7C4005B05CB /* RealmSwift.framework */,
-				25A0D077DCE8153D08819560 /* Pods_iconcalendar.framework */,
+				EAEB606034E73765286500CC /* Pods_GazouCalendar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,9 +170,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		262AAC9623CE0336001AB3DE /* iconcalendar */ = {
+		262AAC9623CE0336001AB3DE /* GazouCalendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "iconcalendar" */;
+			buildConfigurationList = 262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "GazouCalendar" */;
 			buildPhases = (
 				3ADC1757B2A5B595099C314D /* [CP] Check Pods Manifest.lock */,
 				262AAC9323CE0336001AB3DE /* Sources */,
@@ -178,9 +185,9 @@
 			);
 			dependencies = (
 			);
-			name = iconcalendar;
+			name = GazouCalendar;
 			productName = IconCalendar;
-			productReference = 262AAC9723CE0336001AB3DE /* gazoucalendar.app */;
+			productReference = 262AAC9723CE0336001AB3DE /* GazouCalendar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -198,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "iconcalendar" */;
+			buildConfigurationList = 262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "GazouCalendar" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -211,7 +218,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				262AAC9623CE0336001AB3DE /* iconcalendar */,
+				262AAC9623CE0336001AB3DE /* GazouCalendar */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26165D9823EF557D00D888C0 /* Main.storyboard in Resources */,
+				2672A82D24809E6C00015293 /* Default-568h@2x.png in Resources */,
 				262AACA723CE0337001AB3DE /* LaunchScreen.storyboard in Resources */,
 				262AACA423CE0337001AB3DE /* Assets.xcassets in Resources */,
 			);
@@ -236,15 +244,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iconcalendar/Pods-iconcalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-GazouCalendar/Pods-GazouCalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iconcalendar/Pods-iconcalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-GazouCalendar/Pods-GazouCalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iconcalendar/Pods-iconcalendar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GazouCalendar/Pods-GazouCalendar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3ADC1757B2A5B595099C314D /* [CP] Check Pods Manifest.lock */ = {
@@ -262,7 +270,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iconcalendar-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GazouCalendar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -416,7 +424,7 @@
 		};
 		262AACAC23CE0337001AB3DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1C60593B326E408D3B1E534 /* Pods-iconcalendar.debug.xcconfig */;
+			baseConfigurationReference = 0CC1DEF5BE59FEE55E63BBD1 /* Pods-GazouCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -429,7 +437,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.gazouCalendar;
-				PRODUCT_NAME = gazoucalendar;
+				PRODUCT_NAME = GazouCalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -437,7 +445,7 @@
 		};
 		262AACAD23CE0337001AB3DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE7C2DFD8E4287725F4588FB /* Pods-iconcalendar.release.xcconfig */;
+			baseConfigurationReference = 1361A4F1CBB05CEC763986DF /* Pods-GazouCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,7 +458,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.gazouCalendar;
-				PRODUCT_NAME = gazoucalendar;
+				PRODUCT_NAME = GazouCalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -459,7 +467,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "iconcalendar" */ = {
+		262AAC9223CE0336001AB3DE /* Build configuration list for PBXProject "GazouCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				262AACA923CE0337001AB3DE /* Debug */,
@@ -468,7 +476,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "iconcalendar" */ = {
+		262AACAB23CE0337001AB3DE /* Build configuration list for PBXNativeTarget "GazouCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				262AACAC23CE0337001AB3DE /* Debug */,

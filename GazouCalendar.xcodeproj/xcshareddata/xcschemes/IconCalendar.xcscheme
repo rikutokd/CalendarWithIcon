@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262AAC9623CE0336001AB3DE"
-            BuildableName = "iconcalendar.app"
+            BuildableName = "gazoucalendar.app"
             BlueprintName = "iconcalendar"
             ReferencedContainer = "container:iconcalendar.xcodeproj">
          </BuildableReference>
