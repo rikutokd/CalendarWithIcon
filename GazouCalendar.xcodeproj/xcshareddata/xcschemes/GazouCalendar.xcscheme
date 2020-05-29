@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1150"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "262AAC9623CE0336001AB3DE"
-               BuildableName = "iconcalendar.app"
-               BlueprintName = "iconcalendar"
-               ReferencedContainer = "container:iconcalendar.xcodeproj">
+               BuildableName = "GazouCalendar.app"
+               BlueprintName = "GazouCalendar"
+               ReferencedContainer = "container:GazouCalendar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262AAC9623CE0336001AB3DE"
-            BuildableName = "gazoucalendar.app"
-            BlueprintName = "iconcalendar"
-            ReferencedContainer = "container:iconcalendar.xcodeproj">
+            BuildableName = "GazouCalendar.app"
+            BlueprintName = "GazouCalendar"
+            ReferencedContainer = "container:GazouCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "262AAC9623CE0336001AB3DE"
-            BuildableName = "iconcalendar.app"
-            BlueprintName = "iconcalendar"
-            ReferencedContainer = "container:iconcalendar.xcodeproj">
+            BuildableName = "GazouCalendar.app"
+            BlueprintName = "GazouCalendar"
+            ReferencedContainer = "container:GazouCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
