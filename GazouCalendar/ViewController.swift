@@ -10,9 +10,10 @@ import UIKit
 import FSCalendar
 import CalculateCalendarLogic
 import RealmSwift
+import UserNotifications
 
 
-class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
+class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UNUserNotificationCenterDelegate{
     
     @IBOutlet weak var calendar: FSCalendar!
     
@@ -331,5 +332,46 @@ extension ViewController {
         }
         
     }
-            
+    
+    //通知設定
+    
+    func addNotifications(){
+    //登録処理
+        let content = UNMutableNotificationContent()
+        let center = UNUserNotificationCenter.current()
+        var dateCompo = DateComponents()
+        
+        var uHour : Int
+        var uMinute : Int
+        
+        //通知タイトル
+        content.title = "今日の予定";
+        //通知内容
+        content.body = "text";
+        //通知サウンド
+        content.sound = UNNotificationSound.default
+        
+        //通知時間設定(時間と分)
+        //dateCompo.hour = uHour
+        //dateCompo.minute = uMinute
+        
+        //通知トリガー設定
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompo, repeats: false)
+        
+        //通知リクエスト設定
+        let request = UNNotificationRequest.init(identifier: "TestNotification", content: content, trigger: trigger)
+        
+        //通知リクエストを追加
+        center.add(request)
+        //デリゲート設定
+        center.delegate = self
+    }
+    
+    //ポップアップ表示のタイミングで呼ばれる関数
+    //（アプリがアクティブ、非アクテイブ、アプリ未起動,バックグラウンドでも呼ばれる）
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.sound])
+    }
 }

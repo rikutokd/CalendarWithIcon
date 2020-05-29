@@ -16,48 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //起動時に呼ばれる関数
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //ローンチ終わったら通知について聞く
+        //起動し終わったら通知について聞く
         let center = UNUserNotificationCenter.current()
 
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 print("通知が許可されました")
             } else {
-                print("通知は拒否されました")
+                print("通知が拒否されました")
             }
         }
         
-        //登録処理
-        let content = UNMutableNotificationContent()
-        //通知タイトル
-        content.title = "今日の予定";
-        //通知内容
-        content.body = "text";
-        //通知サウンド
-        content.sound = UNNotificationSound.default
-        
-        //通知トリガー設定
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)//5秒後
-        
-        //通知リクエスト設定
-        let request = UNNotificationRequest.init(identifier: "TestNotification", content: content, trigger: trigger)
-        
-        //通知リクエストを追加
-        center.add(request)
-        //デリゲート設定
-        center.delegate = self
-        
-        return true
-    }
-    
-    //上記のNotificatioを５秒後に受け取る関数
-    //ポップアップ表示のタイミングで呼ばれる関数
-    //（アプリがアクティブ、非アクテイブ、アプリ未起動,バックグラウンドでも呼ばれる）
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert,.sound])
-    }
+
     
 
     // MARK: UISceneSession Lifecycle
@@ -72,8 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        }
+
+        return true
     }
 
-
 }
-
