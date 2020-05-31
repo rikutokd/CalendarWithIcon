@@ -21,7 +21,8 @@ class SettingViewController: UIViewController, UITextFieldDelegate{
         let myDatePicker = UIDatePicker()
         //DatePicker = 時間のみモード
         myDatePicker.datePickerMode = UIDatePicker.Mode.time
-        
+        // 分刻みを３０分単位で設定
+        myDatePicker.minuteInterval = 10
         //DatePickerフレームサイズ設定
         myDatePicker.frame = CGRect(x:16 , y: 80, width: 400, height: 200)
         
