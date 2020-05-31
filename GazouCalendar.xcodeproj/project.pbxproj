@@ -17,6 +17,7 @@
 		2637D29F23F3D7C4005B05CB /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654C47C23CF0AA20017672A /* ImageViewController.swift */; };
 		2672A82D24809E6C00015293 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2672A82C24809E6C00015293 /* Default-568h@2x.png */; };
+		2672A82F2480C24D00015293 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672A82E2480C24D00015293 /* SettingViewController.swift */; };
 		267E6DC023D22510003963BB /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E6DBF23D22510003963BB /* EventModel.swift */; };
 		26D3DEA92406914A004D0886 /* ImageViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */; };
 		E8AD859AE7730E5D0DA607C7 /* Pods_GazouCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAEB606034E73765286500CC /* Pods_GazouCalendar.framework */; };
@@ -58,6 +59,7 @@
 		2637D29923F3D7C4005B05CB /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2654C47C23CF0AA20017672A /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2672A82C24809E6C00015293 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2672A82E2480C24D00015293 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		267E6DBF23D22510003963BB /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewHeaderCell.swift; sourceTree = "<group>"; };
 		26D8C21123F3E484008A1B1B /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 				262AACA823CE0337001AB3DE /* Info.plist */,
 				267E6DBF23D22510003963BB /* EventModel.swift */,
 				26D3DEA82406914A004D0886 /* ImageViewHeaderCell.swift */,
+				2672A82E2480C24D00015293 /* SettingViewController.swift */,
 			);
 			path = GazouCalendar;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				26D3DEA92406914A004D0886 /* ImageViewHeaderCell.swift in Sources */,
 				262AAC9F23CE0336001AB3DE /* ViewController.swift in Sources */,
 				262AAC9B23CE0336001AB3DE /* AppDelegate.swift in Sources */,
+				2672A82F2480C24D00015293 /* SettingViewController.swift in Sources */,
 				2654C47D23CF0AA20017672A /* ImageViewController.swift in Sources */,
 				267E6DC023D22510003963BB /* EventModel.swift in Sources */,
 				262AAC9D23CE0336001AB3DE /* SceneDelegate.swift in Sources */,
