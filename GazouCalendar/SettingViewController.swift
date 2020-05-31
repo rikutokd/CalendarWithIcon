@@ -12,18 +12,21 @@ class SettingViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var backBtn: UIButton!
     
-    @IBOutlet weak var hourField: UITextField!
-    
-    @IBOutlet weak var minuteField: UITextField!
-    
     override func viewDidLoad() {
+        super.viewDidLoad()
         //戻るボタンの設定
         backBtn!.addTarget(self, action: #selector(backEvent(_:)), for: .touchUpInside)
         
-        //TextFieldのデリゲート設定（必須）
-        hourField.delegate = self
-        minuteField.delegate = self
+        //DatePicker設定
+        let myDatePicker = UIDatePicker()
+        //DatePicker = 時間のみモード
+        myDatePicker.datePickerMode = UIDatePicker.Mode.time
         
+        //DatePickerフレームサイズ設定
+        myDatePicker.frame = CGRect(x:16 , y: 80, width: 400, height: 200)
+        
+        //viewにデートピッカー追加
+        self.view.addSubview(myDatePicker)
     }
     
 }
@@ -34,5 +37,5 @@ extension SettingViewController{
         //前のページに戻る
         self.dismiss(animated: true, completion: nil)
     }
-    
+
 }
