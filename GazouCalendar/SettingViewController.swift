@@ -10,15 +10,27 @@ import UIKit
 
 class SettingViewController: UIViewController, UITextFieldDelegate{
     
+    //戻るボタン設定
     @IBOutlet weak var backBtn: UIButton!
+    
+    //OKボタン設定
+    @IBOutlet weak var okBtn: UIButton!
+    
     //DatePicker設定
     @IBOutlet weak var myDatePicker: UIDatePicker!
+    
+    //VCに渡す為の空変数
+    var EmptyuserSetTime : String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //戻るボタンの設定
         backBtn!.addTarget(self, action: #selector(backEvent(_:)), for: .touchUpInside)
+        
+        //OKボタンの設定
+        okBtn!.addTarget(self, action: #selector(okEvent(_:)), for: .touchUpInside)
         
         //機能追加
         myDatePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
@@ -29,6 +41,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate{
     
 }
 
+//Dateをstringにする為のクラス
 class DateUtils {
     class func stringFromDate(date: Date, format: String) -> String {
         let formatter: DateFormatter = DateFormatter()
@@ -45,8 +58,25 @@ extension SettingViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
+    //OKボタン機能設定
+    @objc func okEvent(_: UIButton){
+        
+        let nextVC = self.storyboard?.instantiateViewController(identifier: "mainView") as? ViewController
+        //値渡し
+        nextVC!.userSetTime = self.EmptyuserSetTime
+        //前のページに戻る
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //時間が変更されたらdate型からstring型に変更し、値を格納するメソッド
     @objc func datePickerChanged(picker: UIDatePicker) {
-        print(DateUtils.stringFromDate(date: myDatePicker.date, format: "HH時mm分"))
+        
+        //date型からstring型に変更
+        let userSetTime = DateUtils.stringFromDate(date: myDatePicker.date, format: "HH時mm分")
+        //値格納
+        EmptyuserSetTime = userSetTime
+        
+        print(userSetTime)
     }
     
 }

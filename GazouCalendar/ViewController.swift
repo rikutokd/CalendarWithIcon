@@ -31,6 +31,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //選択した日付を入れる空の変数
     var pickedDate = ""
     
+        //ユーザーが設定した時間を入れる為の空変数
+    var userSetTime = ""
+    
     //エラーメッセージ設定
     //エラーアラート用の変数宣言
     let alert = UIAlertController(title: "エラー", message: "日付が選択されていません。", preferredStyle: .alert)
