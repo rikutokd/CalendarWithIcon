@@ -50,7 +50,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-jF-SFD">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-jF-SFD">
                                 <rect key="frame" x="0.0" y="93" width="375" height="129"/>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
