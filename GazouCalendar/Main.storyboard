@@ -180,6 +180,7 @@
                         <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="deleteBtn" destination="0U2-zh-y51" id="Y7s-wi-gs5"/>
                         <outlet property="plusBtn" destination="P1x-zw-mOX" id="BqE-av-kFZ"/>
+                        <outlet property="settingBtn" destination="EmU-aH-5vk" id="ctL-qO-QkA"/>
                         <outlet property="tableText" destination="MNW-bS-Grv" id="hhj-8v-StV"/>
                         <outlet property="textBtn" destination="WmI-UT-26s" id="wdl-dz-hwp"/>
                     </connections>

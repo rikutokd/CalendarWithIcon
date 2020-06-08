@@ -22,6 +22,9 @@ class SettingViewController: UIViewController, UITextFieldDelegate{
     //VCに渡す為の空変数
     var EmptyuserSetTime : String = ""
     
+    //コールバックする時,引数無し
+    var settingViewTrigger: (() -> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +68,10 @@ extension SettingViewController{
         //値渡し
         nextVC!.userSetTime = self.EmptyuserSetTime
         //前のページに戻る
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: {
+            //Trigger起動でupdateUserSetting()を呼びに行く
+            self.settingViewTrigger?()
+        })
     }
     
     //時間が変更されたらdate型からstring型に変更し、値を格納するメソッド

@@ -27,6 +27,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var tableText: UILabel!
     
+    @IBOutlet weak var settingBtn: UIButton!
+    
+    
     
         //選択した日付を入れる空の変数
     var pickedDate = ""
@@ -88,10 +91,11 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //barのcolor設定
         self.navigationController!.navigationBar.barTintColor = .systemYellow
         
-        //ボタンに機能3種追加
+        //ボタンに機能4種追加
         plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
+        settingBtn!.addTarget(self, action: #selector(goToUserSetting(_:)), for: .touchUpInside)
         
         //alertにキャンセル追加
         alert.addAction(cancelAction)
@@ -334,6 +338,24 @@ extension ViewController {
             tableText.textColor = .black
         }
         
+    }
+    
+    //userSetTimeをユーザー設定として更新する関数
+    `c`
+        //userSetTimeをUserDefaultsに格納する
+        UserDefaults.standard.set(String(), forKey: userSetTime)
+        let uTime = UserDefaults.standard.string(forKey: userSetTime)
+        print(uTime!)
+    }
+    
+    @objc func goToUserSetting(_ sender: UIButton) {
+        let nextVC = self.storyboard?.instantiateViewController(identifier: "settingVIew") as? SettingViewController
+        
+            //行く時.値渡し
+            self.present(nextVC!, animated: true, completion: nil)
+        
+            //帰ってくる時.nextVCにあるプロパティにクロージャを渡す
+        nextVC!.settingViewTrigger = { self.updateUserSetting() }
     }
     
     //通知設定
