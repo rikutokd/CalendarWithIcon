@@ -92,7 +92,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         plusBtn!.addTarget(self, action: #selector(addEvents(_:)), for: .touchUpInside)
         deleteBtn!.addTarget(self, action: #selector(deleteBtn(_:)), for: .touchUpInside)
         textBtn!.addTarget(self, action: #selector(textAdd(_:)), for: .touchUpInside)
-        settingBtn!.addTarget(self, action: #selector(goToUserSetting(_:)), for: .touchUpInside)
+        settingBtn!.addTarget(self, action: #selector(goToUserSettings(_:)), for: .touchUpInside)
         
         //alertにキャンセル追加
         alert.addAction(cancelAction)
@@ -337,7 +337,7 @@ extension ViewController {
         
     }
 
-    @objc func goToUserSetting(_ sender: UIButton) {
+    @objc func goToUserSettings(_ sender: UIButton) {
         let nextVC = self.storyboard?.instantiateViewController(identifier: "settingVIew") as? SettingViewController
         
             //遷移

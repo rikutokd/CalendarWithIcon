@@ -19,7 +19,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate{
     //DatePicker設定
     @IBOutlet weak var myDatePicker: UIDatePicker!
     
-    //VCに渡す為の空変数
+    //空変数
     var userSetTime : String = ""
     
     override func viewDidLoad() {
@@ -62,14 +62,13 @@ extension SettingViewController{
         
         let userDefaults = UserDefaults.standard
         //forKey:NotifiTime で登録
-        userDefaults.register(defaults: [userSetTime : "NotifiTime"])
+        userDefaults.set(userSetTime, forKey: "NotifiTime")
         //UserDefaults永続化
         userDefaults.synchronize()
         
-        // NotifiTimeというキーを指定して保存していたString型の値を取り出す
-        if let NotifiTime = userDefaults.string(forKey: "NotifiTime") {
-            print(NotifiTime)
-        }
+        // NotifiTime取得
+        let NotifiTime = userDefaults.string(forKey: "NotifiTime")
+        print("ユーザーへの通知時刻",NotifiTime!,"が永続化されました")
         
         //前のページに戻る
         self.dismiss(animated: true, completion: nil)
