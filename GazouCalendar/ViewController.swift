@@ -34,9 +34,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         //選択した日付を入れる空の変数
     var pickedDate = ""
     
-        //ユーザーが設定した時間を入れる為の空変数
-    var userSetTime = ""
-    
     //エラーメッセージ設定
     //エラーアラート用の変数宣言
     let alert = UIAlertController(title: "エラー", message: "日付が選択されていません。", preferredStyle: .alert)
@@ -339,23 +336,12 @@ extension ViewController {
         }
         
     }
-    
-    //userSetTimeをユーザー設定として更新する関数
-    `c`
-        //userSetTimeをUserDefaultsに格納する
-        UserDefaults.standard.set(String(), forKey: userSetTime)
-        let uTime = UserDefaults.standard.string(forKey: userSetTime)
-        print(uTime!)
-    }
-    
+
     @objc func goToUserSetting(_ sender: UIButton) {
         let nextVC = self.storyboard?.instantiateViewController(identifier: "settingVIew") as? SettingViewController
         
-            //行く時.値渡し
+            //遷移
             self.present(nextVC!, animated: true, completion: nil)
-        
-            //帰ってくる時.nextVCにあるプロパティにクロージャを渡す
-        nextVC!.settingViewTrigger = { self.updateUserSetting() }
     }
     
     //通知設定

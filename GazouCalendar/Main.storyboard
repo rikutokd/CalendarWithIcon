@@ -37,6 +37,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="OK"/>
                                             </button>
+                                            <connections>
+                                                <action selector="okBtn:" destination="R8D-R2-VtJ" id="gUc-2E-XtS"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -72,7 +75,7 @@
                     <connections>
                         <outlet property="backBtn" destination="vGu-UM-uRs" id="EbM-EG-2X3"/>
                         <outlet property="myDatePicker" destination="Gi9-jF-SFD" id="ngV-cW-EMZ"/>
-                        <outlet property="okBtn" destination="IDg-hJ-Q69" id="uls-RW-e9A"/>
+                        <outlet property="okBtn" destination="IDg-hJ-Q69" id="rxf-NX-k4K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSy-SG-N0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

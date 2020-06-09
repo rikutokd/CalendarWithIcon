@@ -15,16 +15,12 @@ class SettingViewController: UIViewController, UITextFieldDelegate{
     
     //OKボタン設定
     @IBOutlet weak var okBtn: UIButton!
-    
+
     //DatePicker設定
     @IBOutlet weak var myDatePicker: UIDatePicker!
     
     //VCに渡す為の空変数
-    var EmptyuserSetTime : String = ""
-    
-    //コールバックする時,引数無し
-    var settingViewTrigger: (() -> Void)?
-    
+    var userSetTime : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +28,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate{
         //戻るボタンの設定
         backBtn!.addTarget(self, action: #selector(backEvent(_:)), for: .touchUpInside)
         
-        //OKボタンの設定
+        //okボタンの設定
         okBtn!.addTarget(self, action: #selector(okEvent(_:)), for: .touchUpInside)
         
         //機能追加
@@ -61,28 +57,33 @@ extension SettingViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
-    //OKボタン機能設定
+    //okボタン機能設定
     @objc func okEvent(_: UIButton){
         
-        let nextVC = self.storyboard?.instantiateViewController(identifier: "mainView") as? ViewController
-        //値渡し
-        nextVC!.userSetTime = self.EmptyuserSetTime
+        let userDefaults = UserDefaults.standard
+        //forKey:NotifiTime で登録
+        userDefaults.register(defaults: [userSetTime : "NotifiTime"])
+        //UserDefaults永続化
+        userDefaults.synchronize()
+        
+        // NotifiTimeというキーを指定して保存していたString型の値を取り出す
+        if let NotifiTime = userDefaults.string(forKey: "NotifiTime") {
+            print(NotifiTime)
+        }
+        
         //前のページに戻る
-        self.dismiss(animated: true, completion: {
-            //Trigger起動でupdateUserSetting()を呼びに行く
-            self.settingViewTrigger?()
-        })
+        self.dismiss(animated: true, completion: nil)
     }
     
     //時間が変更されたらdate型からstring型に変更し、値を格納するメソッド
     @objc func datePickerChanged(picker: UIDatePicker) {
         
         //date型からstring型に変更
-        let userSetTime = DateUtils.stringFromDate(date: myDatePicker.date, format: "HH時mm分")
+        let userSetTimeLocal = DateUtils.stringFromDate(date: myDatePicker.date, format: "HH時mm分")
         //値格納
-        EmptyuserSetTime = userSetTime
+        userSetTime = userSetTimeLocal
         
-        print(userSetTime)
+        print(userSetTimeLocal)
     }
     
 }
