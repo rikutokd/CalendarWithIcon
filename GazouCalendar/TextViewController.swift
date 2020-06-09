@@ -17,6 +17,9 @@ class TextViewController: UIViewController, UITextFieldDelegate {
     //コールバックする時,引数無し
     var textViewCallBack: (() -> Void)?
     
+    //テキストを通知する為のトリガー
+    var textNotifiTrigger: (() -> Void)?
+    
     @IBOutlet weak var addBtn: UIButton!
     
     @IBOutlet weak var cancelBtn: UIButton!
@@ -106,7 +109,10 @@ extension TextViewController{
 
             //前のページに戻る
             self.dismiss(animated: true, completion: {
+                //更新トリガー
                 self.textViewCallBack?()
+                //通知トリガー
+                self.textNotifiTrigger?()
             })
         
         }

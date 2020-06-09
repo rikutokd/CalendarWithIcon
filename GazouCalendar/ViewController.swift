@@ -11,7 +11,7 @@ import FSCalendar
 import CalculateCalendarLogic
 import RealmSwift
 import UserNotifications
-
+import Foundation
 
 class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UNUserNotificationCenterDelegate{
     
@@ -275,6 +275,7 @@ extension ViewController {
             
             //帰ってくる時.nextVCにあるプロパティにクロージャを渡す
             nextVC!.textViewCallBack = { self.callBack() }
+            nextVC!.textNotifiTrigger = { self.addNotifications() }
         }
         
     }
@@ -347,13 +348,23 @@ extension ViewController {
     //通知設定
     
     func addNotifications(){
-    //登録処理
+        
+         // NotifiTime取得
+        let userDefaults = UserDefaults.standard
+        let NotifiTime = userDefaults.string(forKey: "NotifiTime")
+        
+        //NotifiTime:stringをStringでseparateする
+        let arr:[String] = NotifiTime!.components(separatedBy: "時")
+        print(arr[0])
+        print(arr[1])
+        
+        //登録処理
         let content = UNMutableNotificationContent()
         let center = UNUserNotificationCenter.current()
         var dateCompo = DateComponents()
+        var uHour:Int = Int(arr[0])!
+        var uMinute:Int = Int(arr[1])!
         
-        var uHour : Int
-        var uMinute : Int
         
         //通知タイトル
         content.title = "今日の予定";
@@ -362,20 +373,19 @@ extension ViewController {
         //通知サウンド
         content.sound = UNNotificationSound.default
         
-        //通知時間設定(時間と分)
-        //dateCompo.hour = uHour
-        //dateCompo.minute = uMinute
+        //通知時間設定
+        dateCompo = DateComponents(month:4, day:26, hour:uHour, minute:uMinute)
         
         //通知トリガー設定
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompo, repeats: false)
+        //let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompo, repeats: false)
         
         //通知リクエスト設定
-        let request = UNNotificationRequest.init(identifier: "TestNotification", content: content, trigger: trigger)
+        //let request = UNNotificationRequest.init(identifier: "TestNotification", content: content, trigger: trigger)
         
         //通知リクエストを追加
-        center.add(request)
+        //center.add(request)
         //デリゲート設定
-        center.delegate = self
+        //center.delegate = self
     }
     
     //ポップアップ表示のタイミングで呼ばれる関数
