@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
 
 private let job = [
 "icons8-googleグループ-100"
@@ -260,7 +261,7 @@ private let titles = ["仕事,コミュニケーション","食べ物","旅行"]
 
 private let titleOfImages = ["icons8-コミュニケーションスキル-100","icons8-食事-100","icons8-空港-100"]
 
-class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UNUserNotificationCenterDelegate {
     
     
     var pickedDate = ""
@@ -482,6 +483,8 @@ extension ImageViewController {
                 }
         
             print("データ書き込み完了")
+            
+            addNotifications()
             //前のページに戻る
             
             self.dismiss(animated: true, completion: {
@@ -493,4 +496,58 @@ extension ImageViewController {
     
     }
 
+    func addNotifications(){
+        // NotifiTime取得
+        let userDefaults = UserDefaults.standard
+        let NotifiTime = userDefaults.string(forKey: "NotifiTime")
+               
+        //NotifiTime:stringをStringでseparateする
+        let arr:[String] = NotifiTime!.components(separatedBy: "時")
+        print(arr[0])
+        print(arr[1])
+               
+        //pickedDate Separate
+        let dateArrYear:[String] = pickedDate.components(separatedBy: "年")
+        let dateArrMonth:[String] = dateArrYear[1].components(separatedBy: "月")
+        let dateArrDay:[String] = dateArrMonth[1].components(separatedBy: "日")
+        
+        print(dateArrYear[0])
+        print(dateArrMonth[0])
+        print(dateArrDay[0])
+        
+        //登録処理
+        let content = UNMutableNotificationContent()
+        let center = UNUserNotificationCenter.current()
+        var dateCompo = DateComponents()
+        
+        let uHour:Int = Int(arr[0])!
+        let uMinute:Int = Int(arr[1])!
+        
+        let uYear:Int = Int(dateArrYear[0])!
+        let uMonth:Int = Int(dateArrMonth[0])!
+        let uDay:Int = Int(dateArrDay[0])!
+               
+        //通知タイトル
+        content.title = "今日の予定";
+        //通知内容
+        content.body = "text";
+        //通知サウンド
+        content.sound = UNNotificationSound.default
+               
+        //通知時間設定
+        dateCompo = DateComponents(year:uYear,month:uMonth,day:uDay,hour:uHour, minute:uMinute)
+        print("通知の時間は",dateCompo,"です")
+               
+               //通知トリガー設定
+               let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompo, repeats: false)
+               
+               //通知リクエスト設定
+               let request = UNNotificationRequest.init(identifier: "TestNotification", content: content, trigger: trigger)
+               
+               //通知リクエストを追加
+               center.add(request)
+               //デリゲート設定
+               center.delegate = self
+           }
+    
 }

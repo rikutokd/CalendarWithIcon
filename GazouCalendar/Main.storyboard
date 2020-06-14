@@ -113,6 +113,10 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qce-AN-lnh"/>
                                 </connections>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AQ6-e3-Lrk">
+                                <rect key="frame" x="174" y="450" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -182,6 +186,7 @@
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
                         <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="deleteBtn" destination="0U2-zh-y51" id="Y7s-wi-gs5"/>
+                        <outlet property="notifiState" destination="AQ6-e3-Lrk" id="cam-18-CSN"/>
                         <outlet property="plusBtn" destination="P1x-zw-mOX" id="BqE-av-kFZ"/>
                         <outlet property="settingBtn" destination="EmU-aH-5vk" id="ctL-qO-QkA"/>
                         <outlet property="tableText" destination="MNW-bS-Grv" id="hhj-8v-StV"/>

@@ -29,6 +29,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     @IBOutlet weak var settingBtn: UIButton!
     
+    @IBOutlet weak var notifiState: UISwitch!
     
     
         //選択した日付を入れる空の変数
@@ -343,6 +344,38 @@ extension ViewController {
         
             //遷移
             self.present(nextVC!, animated: true, completion: nil)
+    }
+    
+    //予定があればtrue,無ければfalse
+    func hasEvents() -> Bool{
+        //更新
+        let realm = try! Realm()
+        
+        let f = DateFormatter()
+               f.dateStyle = .long
+               f.timeStyle = .none
+               f.locale = Locale(identifier: "ja_JP")
+               
+               let da = pickedDate
+        
+                print(da)
+               
+               //全スケジュール取得
+               var allObjects = realm.objects(EventModel.self)
+               
+               allObjects = allObjects.filter("date = '\(da)'")
+               let oneObje = allObjects.first
+               let objcIcon = oneObje?.icon
+                let objcText  = oneObje?.text
+               
+
+               if objcIcon == nil && objcText == nil{
+                   print("予定無し")
+                return false
+               }else{
+                print("予定有り")
+                return true
+        }
     }
     
     //通知設定
