@@ -440,7 +440,7 @@
 					"@loader_path/../Frameworks/",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.GazouCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.IconCalendar;
 				PRODUCT_NAME = GazouCalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -461,7 +461,7 @@
 					"@loader_path/../Frameworks/",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.GazouCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.hannet.sato.IconCalendar;
 				PRODUCT_NAME = GazouCalendar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
