@@ -11,31 +11,12 @@ import RealmSwift
 import UserNotifications
 
 private let job = [
-"icons8-googleグループ-100"
-,"icons8-paycheque-100"
-,"icons8-イベント承認-100"
-,"icons8-カスタマー-サポート-100"
-,"icons8-クラウド-100"
-,"icons8-クラウドファンディング-100"
-,"icons8-クラウドへのアップロード-100"
-,"icons8-クレジット-コントロール-100"
+"icons8-paycheque-100"
 ,"icons8-コミュニケーション-100"
 ,"icons8-コミュニケーションスキル-100"
 ,"icons8-コメント-100"
-,"icons8-コラボレーション-100"
-,"icons8-スカイプ-100"
 ,"icons8-チケットを渡す-100"
 ,"icons8-チャット-100"
-,"icons8-ビデオ会議-100"
-,"icons8-ビデオ通話-100"
-,"icons8-ビデオ編集-100"
-,"icons8-プレゼン-100"
-,"icons8-ボックス-100"
-,"icons8-マイトピック-100"
-,"icons8-マッチング求人を探す-100"
-,"icons8-メッセージを読む-100"
-,"icons8-ユーザー-グループの男-100"
-,"icons8-ユーザーグループ-100"
 ,"icons8-会議-100"
 ,"icons8-会計-100"
 ,"icons8-会社-100"
@@ -44,14 +25,12 @@ private let job = [
 ,"icons8-契約-100"
 ,"icons8-作業-100"
 ,"icons8-時間とともに-100"
-,"icons8-社員カード-100"
 ,"icons8-取引先-100"
 ,"icons8-署名-100"
 ,"icons8-食事-100"
 ,"icons8-新しい仕事-100"
 ,"icons8-正社員の職-100"
 ,"icons8-選挙-100"
-,"icons8-超高層ビル-100"
 ,"icons8-電卓-100"
 ,"icons8-電話会議-100"
 ,"icons8-払い戻し-100"
@@ -59,6 +38,32 @@ private let job = [
 ,"icons8-履歴書-100"
 ,"icons8-領収書-100"
 ,"icons8-話す男性-100"
+,"icons8-female-working-with-a-laptop-100.png"
+,"icons8-office-100.png"
+,"icons8-remote-desktop-100.png"
+,"icons8-rules-book-100.png"
+,"icons8-terms-and-conditions-100.png"
+,"icons8-working-with-a-laptop-100.png"
+,"icons8-アシスタント-100.png"
+,"icons8-オンラインサポート-100.png"
+,"icons8-お金を要求-100.png"
+,"icons8-キャッシュ-フロー-100.png"
+,"icons8-スーツケース-100.png"
+,"icons8-ビデオ会議-100.png"
+,"icons8-プロジェクト管理-100.png"
+,"icons8-マッチング求人を探す-100.png"
+,"icons8-為替-100.png"
+,"icons8-会計-100.png"
+,"icons8-会社-100.png"
+,"icons8-株式-100.png"
+,"icons8-見積もり-100.png"
+,"icons8-仕事-100.png"
+,"icons8-署名-100.png"
+,"icons8-新しい仕事-100.png"
+,"icons8-組織-100.png"
+,"icons8-相談-100.png"
+,"icons8-配達-100.png"
+,"icons8-取引先-100.png"
 ]
 
     private let Foods = [
@@ -319,7 +324,7 @@ class ImageViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         switch section {
         case 0://job
-            return 48
+            return 52
         case 1://食べ物
             return 126
         

@@ -8,8 +8,8 @@ target 'GazouCalendar' do
   # Pods for GazouCalendar
 
 pod 'RealmSwift'
-  pod 'FSCalendar'
-  pod 'CalculateCalendarLogic'
+pod 'FSCalendar'
+pod 'CalculateCalendarLogic'
 
 
 end
