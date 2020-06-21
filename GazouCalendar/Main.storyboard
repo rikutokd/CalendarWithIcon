@@ -24,14 +24,14 @@
                                 <color key="barTintColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="設定" id="XOb-jG-ZGV">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="8AZ-dN-lbg">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="8AZ-dN-lbg">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vGu-UM-uRs">
                                                 <rect key="frame" x="16" y="13" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="戻る"/>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="GsS-ec-0jx">
+                                        <barButtonItem key="rightBarButtonItem" style="done" id="GsS-ec-0jx">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IDg-hJ-Q69">
                                                 <rect key="frame" x="276" y="13" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -113,10 +113,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qce-AN-lnh"/>
                                 </connections>
                             </view>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AQ6-e3-Lrk">
-                                <rect key="frame" x="174" y="450" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -137,7 +133,7 @@
                     <navigationItem key="navigationItem" id="8Gv-mE-0N6">
                         <nil key="title"/>
                         <leftBarButtonItems>
-                            <barButtonItem style="plain" id="EPU-3H-izu">
+                            <barButtonItem style="done" id="EPU-3H-izu">
                                 <inset key="largeContentSizeImageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                 <button key="customView" opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="EmU-aH-5vk">
                                     <rect key="frame" x="16" y="11" width="16" height="22"/>
@@ -186,7 +182,6 @@
                         <outlet property="calendar" destination="8yU-xz-Igu" id="uLC-n2-RXn"/>
                         <outlet property="dateIcon" destination="A51-41-4cK" id="lKd-h7-lKH"/>
                         <outlet property="deleteBtn" destination="0U2-zh-y51" id="Y7s-wi-gs5"/>
-                        <outlet property="notifiState" destination="AQ6-e3-Lrk" id="cam-18-CSN"/>
                         <outlet property="plusBtn" destination="P1x-zw-mOX" id="BqE-av-kFZ"/>
                         <outlet property="settingBtn" destination="EmU-aH-5vk" id="ctL-qO-QkA"/>
                         <outlet property="tableText" destination="MNW-bS-Grv" id="hhj-8v-StV"/>
